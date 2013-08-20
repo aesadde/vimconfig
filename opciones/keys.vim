@@ -57,9 +57,14 @@ map <Leader>/ :nohls<CR>
 map <leader>cp :%!pbcopy<CR> "copies all file to clipboard
 map <leader>pp :set paste<CR>:r !pbpaste<CR> :set nopaste<CR> "pastes text with good formatting
 
+"--------------MOTION---------------------"
 "one screen line at a time (instead of vim line)
 nmap j gj
 nmap k gk
+"remap CTRL-F/B" to move page up or down
+nmap J <c-F>
+nmap K <c-B>
 
 "syntastic manual check
+"
 map <leader>ch :SyntasticCheck<CR>

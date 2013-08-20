@@ -21,3 +21,4 @@ source ~/.vim/opciones/colors.vim "colorschemes
 source ~/.vim/opciones/supertabop.vim "supertab options
 source ~/.vim/opciones/syntasticop.vim "syntastic options
 source ~/.vim/opciones/nerdop.vim "powerline options
+source ~/.vim/opciones/tasklistop.vim "task list options
