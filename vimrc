@@ -1,4 +1,7 @@
 "pathogen stuff
+"Pathogen is in a submodule so need this at the beginning of vimrc
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+
 filetype off
 "disable plugins that I don't want instead of removing them completely
 let g:pathogen_disabled = []

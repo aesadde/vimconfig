@@ -40,3 +40,9 @@
 [submodule "bundle/vim-neatstatus"]
 	path = bundle/vim-neatstatus
 	url = https://github.com/maciakl/vim-neatstatus.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = https://github.com/sjl/gundo.vim.git

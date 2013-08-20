@@ -22,10 +22,10 @@ set noerrorbells  "esto para que no ladille cuando hay errores
 
 "otras para probar
 "Bash-like filename completion
-"set wildmenu
-"set wildmode=list:longest
-"set wildignore=*.o,*.fasl
-"set mouse=a
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.o,*.fasl
+set mouse=a
 set directory=/tmp " directory to place swap files in
 set noswapfile "no quiero mas swaps
 set fileformats=mac,unix,dos " support all three, in this order
@@ -78,7 +78,7 @@ set shiftwidth=4
 set expandtab
 set tabstop=4
 set softtabstop=4
-set number  
+"set number   not needed when using the cool status line
 set linebreak
 set display+=lastline
 
