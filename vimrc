@@ -22,3 +22,5 @@ source ~/.vim/opciones/supertabop.vim "supertab options
 source ~/.vim/opciones/syntasticop.vim "syntastic options
 source ~/.vim/opciones/nerdop.vim "powerline options
 source ~/.vim/opciones/tasklistop.vim "task list options
+source ~/.vim/opciones/tagbarop.vim "tagbar options
+source ~/.vim/opciones/vim-latexop.vim "vim latex options

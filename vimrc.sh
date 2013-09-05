@@ -4,6 +4,7 @@
 	This small script is intended just
 	to create the correct links to get a vim configuration
 	running quickly
+    And download all info from submodules
 REFERENCE
 echo "This will updated all submodules and set the vimrc correctly"
 

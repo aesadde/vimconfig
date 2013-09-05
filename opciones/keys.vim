@@ -15,7 +15,7 @@ map <Leader>q :wq<CR>
 map <Leader>ts :TagbarToggle<CR> 
 
 "crea los tags para los archivos en el directorio actual
-map <Leader>gt :!/opt/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <Leader>gt :!ctags -R  --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "teclar para escribir :tag mas rapido
 map <Leader>tg :tag
 map <Leader>sp :set paste<CR>

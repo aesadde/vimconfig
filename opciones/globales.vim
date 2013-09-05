@@ -16,7 +16,7 @@ filetype indent on
 set incsearch " ...dynamically as they are typed
 set term=ansi
 set hlsearch "highlighted search
-set visualbell "esto sirve para que VIM no suene xD
+set novisualbell "esto sirve para que VIM no suene xD
 set noerrorbells  "esto para que no ladille cuando hay errores
 
 
@@ -84,6 +84,7 @@ set display+=lastline
 
 "code folding
 set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=99
 "automatically reload vimrc when its saved!
 au BufWritePost .vimrc so ~/.vimrc
