@@ -11,6 +11,7 @@ map <Leader>q :wq<CR>
 "map <c-space> ?
 "map <silent> <Leader><CR> :noh<CR>
 
+"-------TAGS-----------"
 "abre la lista de tags
 map <Leader>ts :TagbarToggle<CR> 
 
@@ -18,21 +19,20 @@ map <Leader>ts :TagbarToggle<CR>
 map <Leader>gt :!ctags -R  --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "teclar para escribir :tag mas rapido
 map <Leader>tg :tag
+"----TAGS END-----"
+
+"-----TEXT FORMATTING------"
+"toggle paste mode
+map <Leader>ps :set nopaste<CR>
 map <Leader>sp :set paste<CR>
 
 "paste key, con buena indentacion
 map <Leader>p p=`]
 "indenta de manera correcta todo el archivo
 map <Leader>= 1G=G
-"cambio de buffer mas rapido
-map <Leader>b :bn<CR>
+"-----TEXT FORMATTING END----"
 
-"windows navigation
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-
+"-----PLUGINS SHORTCUTS---------"
 "tasklist 
 map <Leader>td <Plug>TaskList
 
@@ -41,21 +41,18 @@ map <Leader>g :GundoToggle<CR>
 
 "nerd tree
 map <Leader>n :NERDTreeToggle<CR>
-"rope vim
-"navigate inside the code. Supporst inserting import statements, goto
-"definitions, code completion
-"map <leader>j :RopeGotoDefinition<CR>
-"map <leader>r :RopeRename<CR>
 
 "Ack, like grep but better
 nmap <leader>a <Esc>:Ack!
 
+"syntastic manual check
+map <leader>ch :SyntasticCheck<CR>
+map <Leader>stm :SyntasticToggleMode<CR>
+
 "Clear highlights from search
 map <Leader>/ :nohls<CR>
 
-"copy and paste (clipboard)
-map <leader>cp :%!pbcopy<CR> "copies all file to clipboard
-map <leader>pp :set paste<CR>:r !pbpaste<CR> :set nopaste<CR> "pastes text with good formatting
+"--------PLUGINS SHORTCUTS END ------"
 
 "--------------MOTION---------------------"
 "one screen line at a time (instead of vim line)
@@ -65,6 +62,12 @@ nmap k gk
 nmap J <c-F>
 nmap K <c-B>
 
-"syntastic manual check
-"
-map <leader>ch :SyntasticCheck<CR>
+"cambio de buffer mas rapido
+map <Leader>b :bn<CR>
+
+"windows navigation
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+"-------MOTION END----------------"
