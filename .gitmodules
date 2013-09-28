@@ -55,3 +55,6 @@
 [submodule "bundle/vim-bash"]
 	path = bundle/vim-bash
 	url = https://github.com/vim-scripts/bash-support.vim.git
+[submodule "bundle/vim-YouCompleteMe"]
+	path = bundle/vim-YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
