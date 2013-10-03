@@ -4,7 +4,13 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 filetype off
 "disable plugins that I don't want instead of removing them completely
-let g:pathogen_disabled = []
+
+if has('gui_macvim')
+    let g:pathogen_disabled = []
+else
+    let g:pathogen_disabled = ['vim-YouCompleteMe']
+endif
+
 call pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
