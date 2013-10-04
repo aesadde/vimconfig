@@ -64,6 +64,8 @@ nmap K <c-B>
 
 "cambio de buffer mas rapido
 map <Leader>b :bn<CR>
+"remove buffer
+map <Leader>db :bd<CR>
 
 "windows navigation
 map <c-j> <c-w>j

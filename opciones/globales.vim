@@ -86,5 +86,6 @@ set display+=lastline
 set foldmethod=indent
 set foldmethod=syntax
 set foldlevel=99
+
 "automatically reload vimrc when its saved!
 au BufWritePost .vimrc so ~/.vimrc
