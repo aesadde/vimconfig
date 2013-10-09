@@ -5,7 +5,9 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 filetype off
 "disable plugins that I don't want instead of removing them completely
 
-if has('gui_macvim')
+"disable some plugins that don't work nice on terminal
+
+if has('gui_macvim') || has('gui')
     let g:pathogen_disabled = []
 else
     let g:pathogen_disabled = ['vim-YouCompleteMe']
@@ -19,7 +21,6 @@ source ~/.vim/opciones/globales.vim "global options
 source ~/.vim/opciones/keys.vim "maps and keys
 source ~/.vim/opciones/abbreviations.vim "abbreviations
 source ~/.vim/opciones/opjava.vim
-"source ~/.vim/opciones/opsessions.vim
 source ~/.vim/opciones/opspell.vim
 source ~/.vim/opciones/pythonStuff.vim "python related
 source ~/.vim/opciones/LatexStuff.vim  "latex stuff

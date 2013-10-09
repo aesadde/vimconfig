@@ -16,3 +16,6 @@ echo "This will updated all submodules and set the vimrc correctly"
     echo $PWD
     echo $HOME
     ln -s $PWD/vimrc $HOME/.vimrc  
+
+    echo "installing some extra stuff"
+    ./bundle/vim-YouCompleteMe/install.sh

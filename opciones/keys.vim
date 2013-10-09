@@ -11,9 +11,6 @@ map <Leader>q :wq<CR>
 "map <c-space> ?
 "map <silent> <Leader><CR> :noh<CR>
 
-"-------TAGS-----------"
-"abre la lista de tags
-map <Leader>ts :TagbarToggle<CR> 
 
 "crea los tags para los archivos en el directorio actual
 map <Leader>gt :!ctags -R  --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
@@ -33,6 +30,7 @@ map <Leader>= 1G=G
 "-----TEXT FORMATTING END----"
 
 "-----PLUGINS SHORTCUTS---------"
+
 "tasklist 
 map <Leader>td <Plug>TaskList
 
@@ -52,6 +50,9 @@ map <Leader>stm :SyntasticToggleMode<CR>
 "Clear highlights from search
 map <Leader>/ :nohls<CR>
 
+"-------TAGS-----------"
+"abre la lista de tags
+map <Leader>ts :TagbarToggle<CR> 
 "--------PLUGINS SHORTCUTS END ------"
 
 "--------------MOTION---------------------"
