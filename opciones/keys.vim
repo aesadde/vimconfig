@@ -13,7 +13,7 @@ map <Leader>q :wq<CR>
 
 
 "crea los tags para los archivos en el directorio actual
-map <Leader>gt :!ctags -R  --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <Leader>gt :!ctags -R  --c++-kinds=+p --fields=+iaS --extra=+q --langmap=C++:+.cu .<CR>
 "teclar para escribir :tag mas rapido
 map <Leader>tg :tag
 "----TAGS END-----"
@@ -68,6 +68,7 @@ map <Leader>b :bn<CR>
 "remove buffer
 map <Leader>db :bd<CR>
 
+map <leader>jt :execute "vimgrep /" . expand("<cword>") . "/jg ./**/*.cu *.cpp" <Bar> cw<CR>
 "windows navigation
 map <c-j> <c-w>j
 map <c-k> <c-w>k

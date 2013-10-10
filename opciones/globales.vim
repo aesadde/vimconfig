@@ -1,6 +1,5 @@
 "Opciones Globales
 set pdev=pdf
-"set pastetoggle=<C-p> "deja pegar texto normalmente (no se vuelve loco)
 set history=1000 "aumenta el historial 
 set ignorecase " estas dos opciones sirven para 
 set smartcase  " buscar mejor, ignora mayusculas y las revisa solo si especificado
