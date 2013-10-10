@@ -68,7 +68,7 @@ map <Leader>b :bn<CR>
 "remove buffer
 map <Leader>db :bd<CR>
 
-map <leader>jt :execute "vimgrep /" . expand("<cword>") . "/jg ./**/*.cu *.cpp" <Bar> cw<CR>
+map <Leader>m :execute "vimgrep /" . expand("<cword>") . "/jg ./**/*.cu *.cpp" <Bar> cw<CR>
 "windows navigation
 map <c-j> <c-w>j
 map <c-k> <c-w>k
