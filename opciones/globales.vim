@@ -7,7 +7,7 @@ set smartcase  " buscar mejor, ignora mayusculas y las revisa solo si especifica
 set title "para darle a la ventana el nombre del archivo
 set ruler "en vez de ponerte el numero de linea, en cada linea, lo muestra al fondo
 set wrap "una linea de texto por pantalla
-set tags=./tags,tags;/ "searches for tag files everywhere
+set tags=./tags,./../tags,./*/tags
 
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
