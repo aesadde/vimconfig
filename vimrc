@@ -6,8 +6,7 @@ filetype off
 "disable plugins that I don't want instead of removing them completely
 
 "disable some plugins that don't work nice on terminal
-
-if has('gui_macvim') || has('gui')
+if has('gui_macvim')
     let g:pathogen_disabled = []
 else
     let g:pathogen_disabled = ['vim-YouCompleteMe']
