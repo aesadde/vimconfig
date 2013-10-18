@@ -31,3 +31,4 @@ source ~/.vim/opciones/tasklistop.vim "task list options
 source ~/.vim/opciones/tagbarop.vim "tagbar options
 source ~/.vim/opciones/vim-latexop.vim "vim latex options
 source ~/.vim/opciones/bashop.vim "vim-bash options
+source ~/.vim/opciones/airlineop.vim "vim-airline options
