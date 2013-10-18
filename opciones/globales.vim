@@ -91,7 +91,7 @@ set foldlevel=20
 
 "undo stuff
 "set undodir=~/.vim/undodir
-set undofile on
+set undofile
 
 
 "automatically reload vimrc when its saved!
