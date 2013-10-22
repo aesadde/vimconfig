@@ -34,7 +34,7 @@ iabbrev ccopy Copyright 2013 Alberto Sadde, all rights reserved.
 " }}}
 
 " English abbreviations --------- {{{
-iabbrev adn and
+iabbrev adn an&d
 iabbrev waht what
 iabbrev tehn then
 iabbrev teh the 
@@ -103,15 +103,6 @@ autocmd BufEnter * :cd %:p:h
 "diccionario para autocomplete
 set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 
-"opciones de omnifunction generales
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
-
 "maximo de caracteres por linea
 "set textwidth=80
 
@@ -134,7 +125,7 @@ set foldlevel=20
 
 "undo stuff
 "set undodir=~/.vim/undodir
-set undofile
+"set undofile
 
 
 "automatically reload vimrc when its saved!
@@ -287,9 +278,5 @@ inoremap <right> <nop>
 " }}}
 
 " SPELLING OPTIONS ----------------- {{{
-"Spelling dentro de VIM
-"cambiar idioma spelling:
-""set spelllang= *
 set spelllang=en_gb,it,es
-":set spellsuggest = 2 "opciones para corregir error
 " }}}
