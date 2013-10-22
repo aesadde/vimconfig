@@ -15,11 +15,10 @@ filetype on
 filetype plugin on
 filetype indent on
 set incsearch " ...dynamically as they are typed
-set term=ansi
+"set term=ansi
 set hlsearch "highlighted search
 set novisualbell "esto sirve para que VIM no suene xD
 set noerrorbells  "esto para que no ladille cuando hay errores
-
 
 "otras para probar
 "Bash-like filename completion

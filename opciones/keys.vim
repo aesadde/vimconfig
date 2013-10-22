@@ -55,6 +55,12 @@ noremap <Leader>/ :nohls<CR>
 noremap <Leader>ts :TagbarToggle<CR> 
 "--------PLUGINS SHORTCUTS END ------"
 
+
+"fast vimrc editing
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+
 "--------------MOTION---------------------"
 "one screen line at a time (instead of vim line)
 nnoremap j gj
@@ -74,4 +80,11 @@ noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
 noremap <c-h> <c-w>h
+
+"this are to get used to NOT use arrow keys in insert mode (good practice is
+"to exit to normal mode and move using normal keysnormal keys
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 "-------MOTION END----------------"
