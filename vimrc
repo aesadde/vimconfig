@@ -8,7 +8,7 @@ filetype off
 if has('gui_macvim')
     let g:pathogen_disabled = []
 else
-    let g:pathogen_disabled = ['vim-YouCompleteMe', 'supertab']
+    let g:pathogen_disabled = ['vim-YouCompleteMe', 'supertab', 'delimitMate']
 endif
 " }}}
 
@@ -275,6 +275,8 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 "-------MOTION END----------------"
+
+inoremap ; <esc>$a;
 " }}}
 
 " SPELLING OPTIONS ----------------- {{{
