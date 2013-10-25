@@ -1,77 +1,93 @@
+" KEYS OPTIONS ---------------------------------- {{{
 "map Leader
 let mapleader=","
 let g:mapleader=","
 
 "fast saving 
-map <Leader>w :w!<CR> 
-map <Leader>q :wq<CR>
+noremap <Leader>w :w!<CR> 
+noremap <Leader>q :wq<CR>
 
-"fast searching
-"map <space> /
-"map <c-space> ?
-"map <silent> <Leader><CR> :noh<CR>
-
+"funcion para prender y apagar el spelling
+nmap <silent> <leader>s :set spell!<CR>
 
 "crea los tags para los archivos en el directorio actual
-map <Leader>gt :!ctags -R  --c++-kinds=+p --fields=+iaS --extra=+q --langmap=C++:+.cu .<CR>
+noremap <Leader>gt :!ctags -R  --c++-kinds=+p --fields=+iaS --extra=+q --langnoremap=C++:+.cu .<CR>
 "teclar para escribir :tag mas rapido
-map <Leader>tg :tag
+noremap <Leader>tg :tag
 "----TAGS END-----"
 
 "-----TEXT FORMATTING------"
 "toggle paste mode
-map <Leader>ps :set nopaste<CR>
-map <Leader>sp :set paste<CR>
+noremap <Leader>ps :set nopaste<CR>
+noremap <Leader>sp :set paste<CR>
 
 "paste key, con buena indentacion
-map <Leader>p p=`]
+noremap <Leader>p p=`]
 "indenta de manera correcta todo el archivo
-map <Leader>= 1G=G
+noremap <Leader>= 1G=G
 "-----TEXT FORMATTING END----"
 
 "-----PLUGINS SHORTCUTS---------"
 
 "tasklist 
-map <Leader>td <Plug>TaskList
+noremap <Leader>td <Plug>TaskList
 
 "gundo
-map <Leader>g :GundoToggle<CR>
+noremap <Leader>g :GundoToggle<CR>
 
 "nerd tree
-map <Leader>n :NERDTreeToggle<CR>
+noremap <Leader>n :NERDTreeToggle<CR>
 
 "Ack, like grep but better
-nmap <leader>a <Esc>:Ack!
+nnoremap <leader>a <Esc>:Ack!
 
 "syntastic manual check
-map <leader>ch :SyntasticCheck<CR>
-map <Leader>stm :SyntasticToggleMode<CR>
+noremap <leader>ch :SyntasticCheck<CR>
+noremap <Leader>stm :SyntasticToggleMode<CR>
 
 "Clear highlights from search
-map <Leader>/ :nohls<CR>
+noremap <Leader>/ :nohls<CR>
 
 "-------TAGS-----------"
 "abre la lista de tags
-map <Leader>ts :TagbarToggle<CR> 
+noremap <Leader>ts :TagbarToggle<CR> 
 "--------PLUGINS SHORTCUTS END ------"
+
+
+"fast vimrc editing
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 
 "--------------MOTION---------------------"
 "one screen line at a time (instead of vim line)
-nmap j gj
-nmap k gk
-"remap CTRL-F/B" to move page up or down
-nmap J <c-F>
-nmap K <c-B>
+nnoremap j gj
+nnoremap k gk
+"renoremap CTRL-F/B" to move page up or down
+nnoremap J <c-F>
+nnoremap K <c-B>
 
 "cambio de buffer mas rapido
-map <Leader>b :bn<CR>
+noremap <Leader>b :bn<CR>
 "remove buffer
-map <Leader>db :bd<CR>
+noremap <Leader>db :bd<CR>
 
-map <Leader>m :execute "vimgrep /" . expand("<cword>") . "/jg ./**/*.cu *.cpp" <Bar> cw<CR>
+noremap <Leader>m :execute "vimgrep /" . expand("<cword>") . "/jg ./**/*.cu *.cpp" <Bar> cw<CR>
 "windows navigation
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+noremap <c-l> <c-w>l
+noremap <c-h> <c-w>h
+
+"this are to get used to NOT use arrow keys in insert mode (good practice is
+"to exit to normal mode and move using normal keysnormal keys
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 "-------MOTION END----------------"
+
+inoremap ; <esc>$a;
+inoremap ( ()<esc>i
+inoremap { {<cr><cr>}<esc>ki<tab>
+" }}}

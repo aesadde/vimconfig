@@ -1,7 +1,7 @@
 "Opciones Globales
 set pdev=pdf
-set history=1000 "aumenta el historial 
-set ignorecase " estas dos opciones sirven para 
+set history=1000 "aumenta el historial
+set ignorecase " estas dos opciones sirven para
 set smartcase  " buscar mejor, ignora mayusculas y las revisa solo si especificado
 set title "para darle a la ventana el nombre del archivo
 set ruler "en vez de ponerte el numero de linea, en cada linea, lo muestra al fondo
@@ -15,11 +15,10 @@ filetype on
 filetype plugin on
 filetype indent on
 set incsearch " ...dynamically as they are typed
-set term=ansi
+"set term=ansi
 set hlsearch "highlighted search
 set novisualbell "esto sirve para que VIM no suene xD
 set noerrorbells  "esto para que no ladille cuando hay errores
-
 
 "otras para probar
 "Bash-like filename completion
@@ -37,13 +36,14 @@ set modelines=0         " CVE-2007-2438
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
 set nocompatible        " Use Vim defaults instead of 100% vi compatibility
-set backspace=2 
+set backspace=2
 set ofu=syntaxcomplete "esto prende el auto completion
 
 "esto es para que no me deje escribir mas de 80 caracteres por linea
 "match ErrorMsg /\%>80v.\+/
 "lo que sigue es para mejorar el statusline
-set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [POS=%04l,%04v]\ [%p%%] 
+set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [POS=%04l,%04v]\ [%p%%]
+set statusline+=%{fugitive#statusline()}
 "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
 set laststatus=2
 
@@ -87,6 +87,11 @@ set display+=lastline
 set foldmethod=indent
 set foldmethod=syntax
 set foldlevel=20
+
+"undo stuff
+"set undodir=~/.vim/undodir
+set undofile
+
 
 "automatically reload vimrc when its saved!
 au BufWritePost .vimrc so ~/.vimrc
