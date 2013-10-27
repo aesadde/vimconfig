@@ -91,3 +91,4 @@ inoremap ; <esc>$a;
 "inoremap ( ()<esc>i
 "inoremap { {<cr><cr>}<esc>ki<tab>
 " }}}
+inoremap <tab> <c-n>
