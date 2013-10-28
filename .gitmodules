@@ -52,15 +52,9 @@
 [submodule "bundle/vim-bufexplorer"]
 	path = bundle/vim-bufexplorer
 	url = https://github.com/corntrace/bufexplorer.git
-[submodule "bundle/vim-YouCompleteMe"]
-	path = bundle/vim-YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "bundle/vim-airline"]
-	path = bundle/vim-airline
-	url = https://github.com/bling/vim-airline.git
 [submodule "bundle/vim-twit"]
 	path = bundle/vim-twit
 	url = https://github.com/vim-scripts/TwitVim.git
