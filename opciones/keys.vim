@@ -1,8 +1,8 @@
-" KEYS OPTIONS ---------------------------------- {{{
-"map Leader
+" KEYS OPTIONS ---------------------------------- 
+"map Leader {{{
 let mapleader=","
 let g:mapleader=","
-
+" }}}
 "fast saving 
 noremap <Leader>w :w!<CR> 
 noremap <Leader>q :wq<CR>
@@ -16,7 +16,7 @@ noremap <Leader>gt :!ctags -R  --c++-kinds=+p --fields=+iaS --extra=+q --langnor
 noremap <Leader>tg :tag
 "----TAGS END-----"
 
-"-----TEXT FORMATTING------"
+"-----TEXT FORMATTING------  {{{
 "toggle paste mode
 noremap <Leader>ps :set nopaste<CR>
 noremap <Leader>sp :set paste<CR>
@@ -25,9 +25,8 @@ noremap <Leader>sp :set paste<CR>
 noremap <Leader>p p=`]
 "indenta de manera correcta todo el archivo
 noremap <Leader>= 1G=G
-"-----TEXT FORMATTING END----"
-
-"-----PLUGINS SHORTCUTS---------"
+" }}}
+"-----PLUGINS SHORTCUTS--------- {{{
 
 "tasklist 
 noremap <Leader>td <Plug>TaskList
@@ -51,15 +50,13 @@ noremap <Leader>/ :nohls<CR>
 "-------TAGS-----------"
 "abre la lista de tags
 noremap <Leader>ts :TagbarToggle<CR> 
-"--------PLUGINS SHORTCUTS END ------"
-
+"}}}
 
 "fast vimrc editing
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-
-"--------------MOTION---------------------"
+"--------------MOTION-------------------- {{{
 "one screen line at a time (instead of vim line)
 nnoremap j gj
 nnoremap k gk
@@ -85,9 +82,10 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-"-------MOTION END----------------"
+"-------MOTION END---------------
+" }}}
 
 inoremap ; <esc>$a;
-inoremap ( ()<esc>i
-inoremap { {<cr><cr>}<esc>ki<tab>
-" }}}
+nnoremap <leader>ec :e %<.cpp<cr> "opens source file corresponding to current header
+nnoremap <leader>eh :e %<.h<cr> "opens header corresponding to current source
+
