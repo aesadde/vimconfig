@@ -61,3 +61,6 @@
 [submodule "bundle/vim-a"]
 	path = bundle/vim-a
 	url = https://github.com/vim-scripts/a.vim.git
+[submodule "bundle/vim-colorschemeUtility"]
+	path = bundle/vim-colorschemeUtility
+	url = https://github.com/biskark/vim-ultimate-colorscheme-utility.git
