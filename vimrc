@@ -8,7 +8,7 @@ filetype off
 if has('gui_macvim')
     let g:pathogen_disabled = []
 else
-    let g:pathogen_disabled = ['vim-YouCompleteMe', 'supertab']
+    let g:pathogen_disabled = []
 endif
 " }}}
 
