@@ -16,9 +16,3 @@ echo "This will updated all submodules and set the vimrc correctly"
     echo $PWD
     echo $HOME
     ln -s $PWD/vimrc $HOME/.vimrc  
-
-    #adding Cuda to tagbar
-    echo 'adding cuda support to tagbar manually'
-
-    echo "installing some extra stuff"
-    ./bundle/vim-YouCompleteMe/install.sh --clang-completer
