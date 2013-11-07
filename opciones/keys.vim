@@ -87,7 +87,8 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 "-------MOTION END----------------"
 
-inoremap ; <esc>$a;
+inoremap ; <esc>A;
+nnoremap ; mqA;<esc>`q"
 "inoremap ( ()<esc>i
 "inoremap { {<cr><cr>}<esc>ki<tab>
 " }}}
