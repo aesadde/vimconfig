@@ -30,7 +30,7 @@ noremap <Leader>= 1G=G
 "-----PLUGINS SHORTCUTS---------"
 
 "tasklist 
-noremap <Leader>td <Plug>TaskList
+nnoremap <Leader>td <Plug>TaskList
 
 "gundo
 noremap <Leader>g :GundoToggle<CR>
