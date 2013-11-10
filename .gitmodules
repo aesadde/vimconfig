@@ -86,3 +86,6 @@
 	path = bundle/vim-colorschemeUtility
 	url = https://github.com/biskark/vim-ultimate-colorscheme-utility.git
     ignore = dirty
+[submodule "bundle/skeletons"]
+	path = bundle/skeletons
+	url = https://github.com/tobyS/skeletons.vim.git
