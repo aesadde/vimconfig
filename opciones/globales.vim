@@ -7,6 +7,8 @@ set title "para darle a la ventana el nombre del archivo
 set ruler "en vez de ponerte el numero de linea, en cada linea, lo muestra al fondo
 set wrap "una linea de texto por pantalla
 set tags=./tags,./../tags,./*/tags
+set ai "Auto indent"
+set si "smart indent"
 
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
@@ -24,7 +26,7 @@ set noerrorbells  "esto para que no ladille cuando hay errores
 "Bash-like filename completion
 set wildmenu
 set wildmode=list:longest
-set wildignore=*.o,*.fasl
+set wildignore=*.o,*.~
 set mouse=a
 set directory=/tmp " directory to place swap files in
 set noswapfile "no quiero mas swaps
@@ -47,9 +49,10 @@ set statusline+=%{fugitive#statusline()}
 "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
 set laststatus=2
 
-set statusline+=%#waningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#waningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
 set encoding=utf-8 "unicode
 " highlight de la linea en la que se escribe ( columna opcional )
 "set cursorcolumn
@@ -87,11 +90,6 @@ set display+=lastline
 set foldmethod=indent
 set foldmethod=syntax
 set foldlevel=20
-
-"undo stuff
-"set undodir=~/.vim/undodir
-"set undofile
-
 
 "automatically reload vimrc when its saved!
 au BufWritePost .vimrc so ~/.vimrc
