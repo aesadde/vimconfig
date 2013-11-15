@@ -72,7 +72,7 @@ noremap <Leader>b :bn<CR>
 "remove buffer
 noremap <Leader>db :bd<CR>
 
-noremap <Leader>m :execute "vimgrep /" . expand("<cword>") . "/jg ./**/*.cu *.cpp" <Bar> cw<CR>
+noremap <Leader>m :execute "vimgrep /" . expand("<cword>") . "/jg ./**/*.cu *.cpp" <cr>:copen<cr>
 "windows navigation
 noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
@@ -89,7 +89,4 @@ inoremap <right> <nop>
 
 inoremap ; <esc>A;
 nnoremap ; mqA;<esc>`q"
-"inoremap ( ()<esc>i
-"inoremap { {<cr><cr>}<esc>ki<tab>
 " }}}
-"inoremap <tab> <c-n>
