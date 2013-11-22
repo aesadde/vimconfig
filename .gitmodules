@@ -89,3 +89,6 @@
 [submodule "bundle/skeletons"]
 	path = bundle/skeletons
 	url = https://github.com/tobyS/skeletons.vim.git
+[submodule "bundle/align"]
+	path = bundle/align
+	url = https://github.com/vim-scripts/Align.git

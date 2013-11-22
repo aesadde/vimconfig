@@ -20,6 +20,7 @@ noremap <Leader>tg :tag
 "toggle paste mode
 noremap <Leader>ps :set nopaste<CR>
 noremap <Leader>sp :set paste<CR>
+inoremap <C-v> <esc>"+gP<CR>
 
 "paste key, con buena indentacion
 noremap <Leader>p p=`]
