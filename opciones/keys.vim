@@ -30,6 +30,8 @@ noremap <Leader>= 1G=G
 
 "-----PLUGINS SHORTCUTS---------"
 
+"taglist
+noremap <leader>lt :TlistToggle<CR>
 "tasklist 
 nmap <Leader>td <Plug>TaskList
 
