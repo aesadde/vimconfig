@@ -2,14 +2,6 @@
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
     ignore = dirty
-[submodule "bundle/ack"]
-	path = bundle/ack
-	url = https://github.com/mileszs/ack.vim.git
-    ignore = dirty
-[submodule "bundle/vim-commentary"]
-	path = bundle/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-    ignore = dirty
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
@@ -86,9 +78,7 @@
 	path = bundle/vim-colorschemeUtility
 	url = https://github.com/biskark/vim-ultimate-colorscheme-utility.git
     ignore = dirty
-[submodule "bundle/skeletons"]
-	path = bundle/skeletons
-	url = https://github.com/tobyS/skeletons.vim.git
 [submodule "bundle/align"]
 	path = bundle/align
 	url = https://github.com/vim-scripts/Align.git
+    ignore = dirty
