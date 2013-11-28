@@ -93,3 +93,6 @@ set foldlevel=20
 
 "automatically reload vimrc when its saved!
 au BufWritePost .vimrc so ~/.vimrc
+
+"set errorfile list
+"set errorfile = error.list

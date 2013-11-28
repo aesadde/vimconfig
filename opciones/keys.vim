@@ -1,8 +1,10 @@
 " KEYS OPTIONS ---------------------------------- {{{
+
 "map Leader
 let mapleader=","
 let g:mapleader=","
 
+"-------MISC--------------{{{
 "fast saving 
 noremap <Leader>w :w!<CR> 
 noremap <Leader>q :wq<CR>
@@ -10,13 +12,13 @@ noremap <Leader>q :wq<CR>
 "funcion para prender y apagar el spelling
 nmap <silent> <leader>s :set spell!<CR>
 
-"crea los tags para los archivos en el directorio actual
-noremap <Leader>gt :!ctags -R  --c++-kinds=+p --fields=+iaS --extra=+q --langnoremap=C++:+.cu .<CR>
-"teclar para escribir :tag mas rapido
-noremap <Leader>tg :tag
-"----TAGS END-----"
+"fast vimrc editing
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+"-----MISC--------
+"}}}
 
-"-----TEXT FORMATTING------"
+"-----TEXT FORMATTING-----------------{{{
 "toggle paste mode
 noremap <Leader>ps :set nopaste<CR>
 noremap <Leader>sp :set paste<CR>
@@ -26,9 +28,14 @@ inoremap <C-v> <esc>"+gP<CR>
 noremap <Leader>p p=`]
 "indenta de manera correcta todo el archivo
 noremap <Leader>= 1G=G
-"-----TEXT FORMATTING END----"
 
-"-----PLUGINS SHORTCUTS---------"
+"append semicolon at end of line
+"inoremap ; <esc>A;
+"nnoremap ; mqA;<esc>`q"
+"-----TEXT FORMATTING END----"
+"}}}
+
+"-----PLUGINS SHORTCUTS------------{{{
 
 "taglist
 noremap <leader>lt :TlistToggle<CR>
@@ -51,18 +58,13 @@ noremap <Leader>stm :SyntasticToggleMode<CR>
 "Clear highlights from search
 noremap <Leader>/ :nohls<CR>
 
-"-------TAGS-----------"
+"Tagbar
 "abre la lista de tags
 noremap <Leader>ts :TagbarToggle<CR> 
 "--------PLUGINS SHORTCUTS END ------"
+"}}}
 
-
-"fast vimrc editing
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-
-"--------------MOTION---------------------"
+"--------------MOTION---------------------{{{
 "one screen line at a time (instead of vim line)
 nnoremap j gj
 nnoremap k gk
@@ -88,7 +90,10 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+" Move to next error after make
+nnoremap  <leader>ne :cnext<cr>
+nnoremap  <leader>pe :cprevious<cr>
 "-------MOTION END----------------"
-inoremap ; <esc>A;
-nnoremap ; mqA;<esc>`q"
+"}}}
 " }}}
