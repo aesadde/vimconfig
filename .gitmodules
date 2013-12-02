@@ -78,7 +78,3 @@
 	path = bundle/vim-colorschemeUtility
 	url = https://github.com/biskark/vim-ultimate-colorscheme-utility.git
     ignore = dirty
-[submodule "bundle/align"]
-	path = bundle/align
-	url = https://github.com/vim-scripts/Align.git
-    ignore = dirty
