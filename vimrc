@@ -1,6 +1,5 @@
-"pathogen stuff
 "Pathogen is in a submodule so need this at the beginning of vimrc
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+source ~/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
 filetype off
 "disable plugins that I don't want instead of removing them completely
 
@@ -19,19 +18,19 @@ call pathogen#helptags()
 " }}}
 
 "Source stuff -------------------------------------- {{{
-source ~/.vim/opciones/globales.vim "global options
-source ~/.vim/opciones/keys.vim "maps and keys
-source ~/.vim/opciones/opjava.vim
-source ~/.vim/opciones/opspell.vim
-source ~/.vim/opciones/LatexStuff.vim  "latex stuff
-source ~/.vim/opciones/colors.vim "colorschemes
-source ~/.vim/opciones/syntasticop.vim "syntastic options
-source ~/.vim/opciones/nerdop.vim "powerline options
-source ~/.vim/opciones/tasklistop.vim "task list options
-source ~/.vim/opciones/tagbarop.vim "tagbar options
-source ~/.vim/opciones/vim-latexop.vim "vim latex options
-source ~/.vim/opciones/bashop.vim "vim-bash options
-source ~/.vim/opciones/abbreviations.vim "abbreviations 
+source $HOME/dotfiles/vim/opciones/globales.vim "global options
+source $HOME/dotfiles/vim/opciones/keys.vim "maps and keys
+source $HOME/dotfiles/vim/opciones/opjava.vim
+source $HOME/dotfiles/vim/opciones/opspell.vim
+source $HOME/dotfiles/vim/opciones/LatexStuff.vim  "latex stuff
+source $HOME/dotfiles/vim/opciones/colors.vim "colorschemes
+source $HOME/dotfiles/vim/opciones/syntasticop.vim "syntastic options
+source $HOME/dotfiles/vim/opciones/nerdop.vim "powerline options
+source $HOME/dotfiles/vim/opciones/tasklistop.vim "task list options
+source $HOME/dotfiles/vim/opciones/tagbarop.vim "tagbar options
+source $HOME/dotfiles/vim/opciones/vim-latexop.vim "vim latex options
+source $HOME/dotfiles/vim/opciones/bashop.vim "vim-bash options
+source $HOME/dotfiles/vim/opciones/abbreviations.vim "abbreviations 
 "}}}
 
 " Vim marker folding method for vimscripts --------------- {{{
