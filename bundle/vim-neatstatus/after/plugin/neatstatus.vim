@@ -193,6 +193,7 @@ if has('statusline')
         let &stl.=" %<%F "
         " read only, modified, modifiable flags in brackets
         let &stl.="%([%R%M]%)".g:NeatStatusLine_separator
+
         "vim-fugitive line to display git branch"
         let &stl.="%{fugitive#statusline()}"
 

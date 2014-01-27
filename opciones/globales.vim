@@ -10,6 +10,9 @@ set tags=./tags,./../tags,./*/tags
 set ai "Auto indent"
 set si "smart indent"
 
+set showcmd  "shows last entered command
+set lazyredraw "redraw screen only when needed
+
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
 syntax on
@@ -90,6 +93,7 @@ set display+=lastline
 set foldmethod=indent
 set foldmethod=syntax
 set foldlevel=20
+set foldcolumn=4
 
 "automatically reload vimrc when its saved!
 au BufWritePost .vimrc so ~/.vimrc
