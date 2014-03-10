@@ -1,17 +1,19 @@
-"Pathogen is in a submodule so need this at the beginning of vimrc
+" variables for mac/windows settins -------------- {{{
+let s:windows = has('win32') || has('win64')
+let s:mac_gui = has('gui_macvim')
+" }}}
+" pathogen initialisation ---------------------- {{{
+"pathogen is in a submodule so need this at the beginning of vimrc
 source ~/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
 filetype off
 "disable plugins that I don't want instead of removing them completely
 
-" Disable/enable plugins depending on Gui ------- {{{
-if has('gui_macvim')
+if s:mac_gui
     let g:pathogen_disabled = []
 else
     let g:pathogen_disabled = []
 endif
-" }}}
 
-" pathogen initialisation ---------------------- {{{
 call pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
@@ -30,7 +32,7 @@ source $HOME/dotfiles/vim/opciones/tasklistop.vim "task list options
 source $HOME/dotfiles/vim/opciones/tagbarop.vim "tagbar options
 source $HOME/dotfiles/vim/opciones/vim-latexop.vim "vim latex options
 source $HOME/dotfiles/vim/opciones/bashop.vim "vim-bash options
-source $HOME/dotfiles/vim/opciones/abbreviations.vim "abbreviations 
+source $HOME/dotfiles/vim/opciones/goldenview.vim "goldenview options
 "}}}
 
 " Vim marker folding method for vimscripts --------------- {{{
