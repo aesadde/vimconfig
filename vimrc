@@ -39,5 +39,6 @@ source $HOME/dotfiles/vim/opciones/goldenview.vim "goldenview options
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
+    autocmd FileType sh setlocal foldmethod=marker
 augroup END
 " }}}
