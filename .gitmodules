@@ -67,3 +67,6 @@
 [submodule "bundle/vim-ghcmod"]
 	path = bundle/vim-ghcmod
 	url = https://github.com/eagletmt/ghcmod-vim
+[submodule "bundle/latex"]
+	path = bundle/latex
+	url = https://github.com/gerw/vim-latex-suite.git
