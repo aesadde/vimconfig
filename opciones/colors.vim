@@ -6,7 +6,7 @@ if s:uname == "Darwin"
     set background=dark
 endif
 
-colorscheme solarized
+colorscheme zenburn
 
 if !has('gui_running')
     " Compatibility for Terminal
