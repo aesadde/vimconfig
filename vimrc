@@ -34,6 +34,7 @@ source $HOME/dotfiles/vim/opciones/bashop.vim "vim-bash options
 source $HOME/dotfiles/vim/opciones/goldenview.vim "goldenview options
 source $HOME/dotfiles/vim/opciones/customFunctions.vim "simple custom functions
 source $HOME/dotfiles/vim/opciones/uniteop.vim "unite plugin options
+source $HOME/dotfiles/vim/opciones/tagbarop.vim "tagbar plugin options
 "}}}
 
 " Vim marker folding method for vimscripts {{{
