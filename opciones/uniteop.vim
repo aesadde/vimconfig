@@ -35,7 +35,7 @@ call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
             \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
 
 " yankring
-nnoremap <silent><Leader>i :Unite -silent history/yank<CR>
+nnoremap <silent><Leader>y :Unite -silent history/yank<CR>
 " grep
 nnoremap <silent><Leader>a :Unite -silent -no-quit grep<CR>
 " help
@@ -48,7 +48,3 @@ nnoremap <silent><Leader>o :Unite -silent -start-insert file<CR>
 nnoremap <silent><Leader>O :Unite -silent -start-insert file_rec/async<CR>
 " buffers
 nnoremap <silent><Leader>b :Unite -silent buffer<CR>
-" tabs
-nnoremap <silent><Leader>B :Unite -silent tab<CR>
-noremap <silent><Leader>f :Unite -silent -no-split -start-insert -auto-preview
-            \ line<CR>
