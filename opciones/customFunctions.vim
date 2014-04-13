@@ -1,6 +1,5 @@
-nnoremap <leader>f :call FoldColumnToggle()<cr>
-
-"{---
+nnoremap <leader>tf :call FoldColumnToggle()<cr>
+"{{{
 function! FoldColumnToggle()
     if &foldcolumn
         setlocal foldcolumn=0
@@ -8,10 +7,10 @@ function! FoldColumnToggle()
         setlocal foldcolumn=4
     endif
 endfunction
-"}
-
+"}}}
+"
 "Toggles quickfix list
-nnoremap <leader>q :call QuickfixToggle()<cr>
+nnoremap <leader>tq :call QuickfixToggle()<cr>
 
 let g:quickfix_is_open = 0
 

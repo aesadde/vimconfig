@@ -73,3 +73,9 @@
 [submodule "bundle/vim-easydir"]
 	path = bundle/vim-easydir
 	url = https://github.com/dockyard/vim-easydir.git
+[submodule "bundle/unite"]
+	path = bundle/unite
+	url = https://github.com/Shougo/unite.vim.git
+[submodule "bundle/vimproc"]
+	path = bundle/vimproc
+	url = https://github.com/Shougo/vimproc.vim.git
