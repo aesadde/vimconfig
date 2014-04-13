@@ -52,9 +52,6 @@
 [submodule "bundle/haskellmode"]
 	path = bundle/haskellmode
 	url = https://github.com/lukerandall/haskellmode-vim.git
-[submodule "bundle/abolish"]
-	path = bundle/abolish
-	url = https://github.com/tpope/vim-abolish.git
 [submodule "bundle/goldenView"]
 	path = bundle/goldenView
 	url = https://github.com/zhaocai/GoldenView.Vim.git
