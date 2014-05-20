@@ -1,18 +1,3 @@
-let g:airlines_powerline_fonts=1
-let g:airline_mode_map = {
-      \ '__' : '-',
-      \ 'n'  : 'N',
-      \ 'i'  : 'I',
-      \ 'R'  : 'R',
-      \ 'c'  : 'C',
-      \ 'v'  : 'V',
-      \ 'V'  : 'V',
-      \ '' : 'V',
-      \ 's'  : 'S',
-      \ 'S'  : 'S',
-      \ '' : 'S',
-      \ }
-
 "symbols
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -27,3 +12,10 @@ let g:airline#extensions#syntastic#enabled = 1
 "tagbar
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#tagbar#flags = 's'
+
+"trailing whitespaces warning
+let g:airline#extensions#whitespace#enabled = 1
+
+"show line count of file
+call airline#parts#define_raw('linec', '%L')
+let g:airline_section_z = airline#section#create(['%3p%%', 'linenr', '/', 'linec', ':%3c '])

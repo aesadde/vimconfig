@@ -36,6 +36,7 @@ source $HOME/dotfiles/vim/opciones/customFunctions.vim "simple custom functions
 source $HOME/dotfiles/vim/opciones/uniteop.vim "unite plugin options
 source $HOME/dotfiles/vim/opciones/tagbarop.vim "tagbar plugin options
 source $HOME/dotfiles/vim/opciones/airlinesop.vim "airline plugin options
+source $HOME/dotfiles/vim/opciones/haskellops.vim "haskell mode options
 "}}}
 
 " Vim marker folding method for vimscripts {{{
