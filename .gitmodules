@@ -34,9 +34,6 @@
 [submodule "bundle/vim-multiple-cursors"]
 	path = bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
-[submodule "bundle/matchit"]
-	path = bundle/matchit
-	url = https://github.com/tsaleh/vim-matchit.git
 [submodule "bundle/vim-bash"]
 	path = bundle/vim-bash
 	url = https://github.com/vim-scripts/bash-support.vim.git
