@@ -3,7 +3,7 @@
 
 Be sure you are on your home directory: `cd ~`
 
-`git clone   git://github.com/titico/.vim.git` 
+`git clone   git://github.com/titico/vimconfig.git .vim` 
 
 Finally run `./vimrc.sh`
 
