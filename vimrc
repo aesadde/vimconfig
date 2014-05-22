@@ -2,12 +2,13 @@
 let s:windows = has('win32') || has('win64')
 let s:mac_gui = has('gui_macvim')
 " }}}
+
 " pathogen initialisation  {{{
 "pathogen is in a submodule so need this at the beginning of vimrc
 source ~/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
 filetype off
-"disable plugins that I don't want instead of removing them completely
 
+"disable plugins that I don't want instead of removing them completely
 if s:mac_gui
     let g:pathogen_disabled = []
 else

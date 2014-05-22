@@ -1,11 +1,8 @@
 syntax enable
 colorscheme solarized
 
-let s:uname = system("uname")
-
-if s:uname == "Darwin"
-    set background=dark
-endif
+set background=dark
+let g:solarized_termcolors=16
 
 if !has('gui_running')
     " Compatibility for Terminal
@@ -15,6 +12,6 @@ if !has('gui_running')
         " Do nothing, it handles itself.
     else
         " Make Solarized use 16 colors for Terminal support
-        let g:solarized_termcolors=16
+
     endif
 endif
