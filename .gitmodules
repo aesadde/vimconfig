@@ -73,3 +73,6 @@
 [submodule "bundle/template"]
 	path = bundle/template
 	url = https://github.com/aperezdc/vim-template.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular
