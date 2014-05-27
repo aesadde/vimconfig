@@ -1,4 +1,4 @@
-"Basic options {{{
+"Basic options {{{1
 let g:unite_source_history_yank_enable = 1
 let g:unite_enable_start_insert = 0
 let g:unite_enable_short_source_mes = 0
@@ -16,22 +16,25 @@ let g:unite_source_directory_mru_time_format = '(%d-%m-%Y %H:%M:%S) '
 
 "unite tmp
 let g:junkfile#directory=expand($HOME."/.vim/tmp/junk")
-"}}}
+"1}}}
 
+" Search options {{{1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
             \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
-""}}}
+"1}}}
 
+" Mappings {{{1
 " yankring
 nnoremap <silent><Leader>y :Unite -silent history/yank<CR>
 " grep
-nnoremap <silent><Leader>a :Unite -silent -no-quit grep<CR>
-nnoremap <silent><Leader>; :Unite -silent -toggle
-            \ grep:%::FIXME\|TODO\|NOTE\|XXX\|COMBAK\|@todo<CR>
+nnoremap <silent><Leader>g :Unite -silent -no-quit grep<CR>
+nnoremap <silent><Leader>tl :Unite -silent -toggle grep:%::FIXME\|TODO\|NOTE\|XXX\|@todo<CR>
+
 " files
 nnoremap <silent><Leader>o :Unite -silent -start-insert file<CR>
 nnoremap <silent><Leader>O :Unite -silent -start-insert file_rec/async<CR>
 " buffers
 nnoremap <silent><Leader>b :Unite -silent buffer<CR>
+"1}}}
