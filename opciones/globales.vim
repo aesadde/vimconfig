@@ -40,14 +40,16 @@ set mouse=a
 set directory=/tmp " directory to place swap files in
 set noswapfile "no quiero mas swaps
 set fileformats=mac,unix,dos " support all three, in this order
+
 set showmatch " show matching brackets
+set matchpairs+=<:>
+au FileType cu set matchpairs+=<<<:>>>
 
 set modelines=0         " CVE-2007-2438
 
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
 set nocompatible        " Use Vim defaults instead of 100% vi compatibility
-set backspace=2
 set ofu=syntaxcomplete "esto prende el auto completion
 
 "esto es para que no me deje escribir mas de 80 caracteres por linea
@@ -84,10 +86,10 @@ set splitright                  " Make vertical splits work sanely
 set splitbelow                  " Make horizontal splits work sanely
 set nobackup                    " Don't want any backup magic
 set smartindent
-set shiftwidth=4
+set shiftwidth=2
 set expandtab
-set tabstop=4
-set softtabstop=4
+set tabstop=2
+set softtabstop=2
 "set number   not needed when using the cool status line
 set linebreak
 set display+=lastline
@@ -98,5 +100,11 @@ set foldmethod=syntax
 set foldlevel=20
 set foldcolumn=4
 
-"set errorfile list
-"set errorfile = error.list
+ " enable persistent undo
+  if has('persistent_undo')
+    set undofile
+    set undodir=~/.vim/tmp/undo
+    if !isdirectory(&undodir)
+      call mkdir(&undodir, 'p')
+    endif
+  endif
