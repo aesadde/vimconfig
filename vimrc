@@ -39,6 +39,8 @@ source $HOME/dotfiles/vim/opciones/tagbarop.vim "tagbar plugin options
 source $HOME/dotfiles/vim/opciones/airlinesop.vim "airline plugin options
 source $HOME/dotfiles/vim/opciones/haskellops.vim "haskell mode options
 "}}}
+"
+au! BufNewFile,BufRead * if getline(1) =~ '"ft=vim' | setf vim | endif
 
 " Vim marker folding method for vimscripts {{{
 augroup filetype_vim
