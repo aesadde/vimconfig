@@ -38,7 +38,7 @@ endif
 " operator: the operator we are changing
 function s:OpSpacing(line_num, operator)
     let text = getline(a:line_num)
-    let replace_pattern = '\(\d\)\('.a:operator.'\)\(\d\)'
+    let replace_pattern = '\(\w\)\('.a:operator.'\)\(\w\)'
     let corr = '\1 \2 \3'
     let result = substitute(text, replace_pattern,  corr, 'g')
     call setline(a:line_num, result)
@@ -47,7 +47,7 @@ endfunction
 
 " Function: CorrectSpacing() loops through the whole file and calls OpSpacing "{{{1
 function s:CorrectSpacing()
-    let op_list = ['+', '-', '\*', '=']
+    let op_list = ['+', '-', '\*', '=', '==', '<', '>']
     if exists("g:custom_operator_map")
         call extend(op_list, g:custom_operator_map) "extends the list to contain user defined operators
     endif

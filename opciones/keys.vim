@@ -81,7 +81,6 @@ nnoremap <Leader>b :bn<CR>
 "remove buffer
 nnoremap <Leader>db :bd<CR>
 
-nnoremap <Leader>m :execute "vimgrep /" . expand("<cword>") . "/jg ./**/*.cu *.cpp" <cr>:copen<cr>
 "windows navigation
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
