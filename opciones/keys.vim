@@ -4,6 +4,7 @@ let g:mapleader=","
 "1}}}
 
 "===[ Awsome Tab Wrapper ]=== {{{1
+"Thanks to: https://github.com/garybernhardt
 " Indent if we're at the beginning of a line. Else, do completion.
 function! InsertTabWrapper()
     let col = col('.') - 1
