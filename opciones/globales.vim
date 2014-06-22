@@ -57,6 +57,7 @@ set dictionary+=/usr/share/dict/words
 set nobackup                          " Don't want any backup magic
 set tags=./tags,./../tags,./*/tags
 set pdev=pdf
+set autoread                          " If a file is changed outside of vim, automatically reload it without asking
 "1}}}
 "===[ Folding ]=== {{{1
 set foldmethod=indent
