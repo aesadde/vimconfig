@@ -14,7 +14,6 @@ set linebreak
 set display+=lastline
 set mouse=a
 "1}}}
-
 "===[ Text Formatting options ]=== {{{1
 set encoding=utf-8             " unicode
 set ai                         " Auto indent                                                       "
@@ -75,3 +74,6 @@ if has('persistent_undo')
     endif
 endif
 "1}}}
+" ===[ Omni completion optins ]=== {{[
+set omnifunc=syntaxcomplete#Complete
+" }}}
