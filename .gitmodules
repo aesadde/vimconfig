@@ -43,9 +43,6 @@
 [submodule "bundle/vim-twit"]
 	path = bundle/vim-twit
 	url = https://github.com/vim-scripts/TwitVim.git
-[submodule "bundle/haskellmode"]
-	path = bundle/haskellmode
-	url = https://github.com/lukerandall/haskellmode-vim.git
 [submodule "bundle/goldenView"]
 	path = bundle/goldenView
 	url = https://github.com/zhaocai/GoldenView.Vim.git
@@ -79,3 +76,6 @@
 [submodule "bundle/vim2hs"]
 	path = bundle/vim2hs
 	url = https://github.com/dag/vim2hs.git
+[submodule "bundle/superTab"]
+	path = bundle/superTab
+	url = https://github.com/ervandew/supertab.git

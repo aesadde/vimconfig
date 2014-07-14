@@ -50,7 +50,6 @@ set noswapfile                        " no quiero mas swaps
 set fileformats=mac,unix,dos          " support all three, in this order
 set modelines=0                       " CVE-2007-2438
 set nocompatible                      " Use Vim defaults instead of 100% vi compatibility
-set ofu=syntaxcomplete                " esto prende el auto completion
 autocmd BufEnter * :cd %:p:h          " auto-change directory to current buffer
 set dictionary+=/usr/share/dict/words
 set nobackup                          " Don't want any backup magic
@@ -76,4 +75,5 @@ endif
 "1}}}
 " ===[ Omni completion optins ]=== {{[
 set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menu,preview
 " }}}
