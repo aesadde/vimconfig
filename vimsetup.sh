@@ -8,3 +8,6 @@
     echo $HOME
     ln -s $PWD/vimrc $HOME/.vimrc  
     ln -s $PWD $HOME/.vim
+    cd bundle/vimproc
+    echo $PWD
+    make
