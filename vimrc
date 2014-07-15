@@ -38,6 +38,8 @@ source $HOME/dotfiles/vim/opciones/tagbarop.vim "tagbar plugin options
 source $HOME/dotfiles/vim/opciones/airlinesop.vim "airline plugin options
 source $HOME/dotfiles/vim/opciones/haskellops.vim "haskell mode options
 source $HOME/dotfiles/vim/opciones/delimitMateop.vim "delimitMate options
+source $HOME/dotfiles/vim/opciones/superTabop.vim "superTab options
+source $HOME/dotfiles/vim/opciones/neocomplop.vim "neocomplcache options
 "}}}
 "
 au! BufNewFile,BufRead * if getline(1) =~ '"ft=vim' | setf vim | endif

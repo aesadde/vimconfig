@@ -79,3 +79,6 @@
 [submodule "bundle/neco-ghc"]
 	path = bundle/neco-ghc
 	url = https://github.com/eagletmt/neco-ghc.git
+[submodule "bundle/superTab"]
+	path = bundle/superTab
+	url = https://github.com/ervandew/supertab.git

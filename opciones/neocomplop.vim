@@ -14,6 +14,9 @@ let g:neocomplcache_enable_camel_case_completion = 1
 "Mapping
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+"enable onmincompletion
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
