@@ -25,7 +25,6 @@ source $HOME/dotfiles/vim/opciones/globales.vim "global options
 source $HOME/dotfiles/vim/opciones/keys.vim "maps and keys
 source $HOME/dotfiles/vim/opciones/opjava.vim
 source $HOME/dotfiles/vim/opciones/opspell.vim
-source $HOME/dotfiles/vim/opciones/LatexStuff.vim  "latex stuff
 source $HOME/dotfiles/vim/opciones/colors.vim "colorschemes
 source $HOME/dotfiles/vim/opciones/syntasticop.vim "syntastic options
 source $HOME/dotfiles/vim/opciones/nerdop.vim "powerline options
@@ -38,9 +37,7 @@ source $HOME/dotfiles/vim/opciones/uniteop.vim "unite plugin options
 source $HOME/dotfiles/vim/opciones/tagbarop.vim "tagbar plugin options
 source $HOME/dotfiles/vim/opciones/airlinesop.vim "airline plugin options
 source $HOME/dotfiles/vim/opciones/haskellops.vim "haskell mode options
-source $HOME/dotfiles/vim/opciones/templateop.vim "template options
 source $HOME/dotfiles/vim/opciones/delimitMateop.vim "delimitMate options
-source $HOME/dotfiles/vim/opciones/superTabop.vim "supertab options
 "}}}
 "
 au! BufNewFile,BufRead * if getline(1) =~ '"ft=vim' | setf vim | endif
