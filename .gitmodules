@@ -82,3 +82,6 @@
 [submodule "bundle/superTab"]
 	path = bundle/superTab
 	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/semantic-highlight"]
+	path = bundle/semantic-highlight
+	url = https://github.com/jaxbot/semantic-highlight.vim.git

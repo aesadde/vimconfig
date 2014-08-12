@@ -3,8 +3,5 @@ let g:SuperTabRetainCompletionDuration = 'completion' "current completion mode l
 let g:SuperTabLongestEnhanced = 1  
 let g:SuperTabLongestHighlight = 1  
 
-au! FileType *
-            \ if &omnifunc != '' |
-            \   call SuperTabChain(&omnifunc, "<c-p>") |
-            \ endif
-au! FileType *.hs call SuperTabChain("<c-x><c-u>", "<c-p>")
+inoremap <Nul> <C-X><C-O>
+inoremap <C-Space> <C-X><C-O>

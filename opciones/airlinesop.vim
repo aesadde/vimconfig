@@ -2,7 +2,10 @@
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+
+"beautifiers
 let g:airline_symbols.branch = '⎇'
+"
 "fugitive
 let g:airline#extensions#branch#enabled = 1
 
@@ -15,6 +18,7 @@ let g:airline#extensions#tagbar#flags = 's'
 
 "trailing whitespaces warning
 let g:airline#extensions#whitespace#enabled = 1
+
 
 "show line count of file
 call airline#parts#define_raw('linec', '%L')

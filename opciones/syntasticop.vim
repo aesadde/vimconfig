@@ -1,5 +1,5 @@
-let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_jump = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_auto_jump = 0
 let g:syntatstic_filetype_map = { 'latex': 'tex', 'cuda': 'cu'}
 
 "cool symbols -- taken from https://github.com/joedicastro/dotfiles/blob/master/vim/vimrc
