@@ -85,3 +85,6 @@
 [submodule "bundle/semantic-highlight"]
 	path = bundle/semantic-highlight
 	url = https://github.com/jaxbot/semantic-highlight.vim.git
+[submodule "bundle/sunset"]
+	path = bundle/sunset
+	url = https://github.com/amdt/sunset.git

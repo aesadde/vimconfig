@@ -6,7 +6,6 @@ let g:mapleader=","
 "===[ MISC ]=== {{{
 "fast saving 
 nnoremap <Leader>w :w!<CR> 
-nnoremap <Leader>q :wq<CR>
 
 "funcion para prender y apagar el spelling
 nmap <silent> <leader>s :set spell!<CR>

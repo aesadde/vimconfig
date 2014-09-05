@@ -1,1 +1,0 @@
-/Volumes/Alberto/Users/alberto/dotfiles/vim

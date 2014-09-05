@@ -71,9 +71,10 @@ if has('persistent_undo')
     if !isdirectory(&undodir)
         call mkdir(&undodir, 'p')
     endif
+    set undoreload=10000
 endif
 "1}}}
-" ===[ Omni completion optins ]=== {{[
+" ===[ Omni completion options ]=== {{{
 set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menu,preview
 " }}}
