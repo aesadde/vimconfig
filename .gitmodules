@@ -40,9 +40,6 @@
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "bundle/vim-twit"]
-	path = bundle/vim-twit
-	url = https://github.com/vim-scripts/TwitVim.git
 [submodule "bundle/goldenView"]
 	path = bundle/goldenView
 	url = https://github.com/zhaocai/GoldenView.Vim.git
