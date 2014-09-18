@@ -13,7 +13,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 
 "tagbar
-let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tagbar#enabled = 0 "disable tagbar, not useful
 let g:airline#extensions#tagbar#flags = 's'
 
 "trailing whitespaces warning

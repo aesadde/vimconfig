@@ -16,7 +16,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 "-----MISC--------
 "}}}
 
-"-----TEXT FORMATTING-----------------{{{
+" === [ Text formatting ]=== {{{
 "toggle paste mode
 nnoremap <Leader>ps :set nopaste<CR>
 nnoremap <Leader>sp :set paste<CR>
@@ -31,10 +31,9 @@ nnoremap <Leader>= 1G=G
 "append semicolon at end of line
 "inoremap ; <esc>A;
 "nnoremap ; mqA;<esc>`q"
-"-----TEXT FORMATTING END----"
 "}}}
 
-"-----PLUGINS SHORTCUTS------------{{{
+" ===[ Plugins shortcuts ]=== {{{
 "opspacing
 nnoremap <leader>os :CorrSpacing<CR>
 
@@ -62,10 +61,15 @@ nnoremap <Leader>/ :nohls<CR>
 "Tagbar
 "abre la lista de tags
 nnoremap <Leader>ts :TagbarToggle<CR> 
-"--------PLUGINS SHORTCUTS END ------"
+
+"Ghc-mod
+" Reload
+map <silent> tu :call GHC_BrowseAll()<CR>
+" " Type Lookup
+map <silent> tw :call GHC_ShowType(1)<CR>"
 "}}}
 
-"--------------MOTION---------------------{{{
+" ===[ Motion ]=== {{{
 "one screen line at a time (instead of vim line)
 nnoremap j gj
 nnoremap k gk
@@ -94,5 +98,4 @@ inoremap <right> <nop>
 " Move to next error after make
 nnoremap  <leader>ne :cnext<cr>
 nnoremap  <leader>pe :cprevious<cr>
-"-------MOTION END----------------"
 "}}}
