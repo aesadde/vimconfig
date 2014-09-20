@@ -1,12 +1,12 @@
 "==[ Fold colunmn toggle ]== {{{1
 function! FoldColumnToggle()
     if &foldcolumn
-        setlocal foldcolumn=0
+        setlocal foldcolumn = 0
     else
-        setlocal foldcolumn=4
+        setlocal foldcolumn = 4
     endif
 endfunction
-nnoremap <leader>tf :call FoldColumnToggle()<cr>
+nnoremap <leader > tf :call FoldColumnToggle()<cr>
 "1}}}
 "
 " ==[ Toggles quickfix list ]== {{{1
@@ -23,5 +23,17 @@ function! QuickfixToggle()
         let g:quickfix_is_open = 1
     endif
 endfunction
-nnoremap <leader>q :call QuickfixToggle()<cr>
+nnoremap <leader > q :call QuickfixToggle()<cr>
 "1}}}
+
+" ===[ Trailing whitespaces ]=== {{{
+function! StripTrailingWhitespaces()
+    " save last search & cursor position
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
+endfunction
+" }}}
