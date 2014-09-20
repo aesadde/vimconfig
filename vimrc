@@ -1,9 +1,8 @@
-" variables for mac/windows settings  {{{
+" ===[ Global Variables ]=== {{{
 let s:windows = has('win32') || has('win64')
 let s:mac_gui = has('gui_macvim')
 " }}}
-
-" pathogen initialisation  {{{
+" ===[ Pathogen init ]=== {{{
 "pathogen is in a submodule so need this at the beginning of vimrc
 source ~/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
 filetype off
@@ -19,8 +18,7 @@ call pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
 " }}}
-
-"Source stuff  {{{
+" ===[ All options ]=== {{{
 source $HOME/dotfiles/vim/opciones/globales.vim "global options
 source $HOME/dotfiles/vim/opciones/keys.vim "maps and keys
 source $HOME/dotfiles/vim/opciones/opjava.vim
@@ -42,7 +40,7 @@ source $HOME/dotfiles/vim/opciones/superTabop.vim "superTab options
 source $HOME/dotfiles/vim/opciones/neocomplop.vim "neocomplcache options
 source $HOME/dotfiles/vim/opciones/sunsetop.vim "sunset details
 "}}}
-"
+" ===[ Useful autocommands ]===  {{{
 au! BufNewFile,BufRead * if getline(1) =~ '"ft=vim' | setf vim | endif
 
 " Vim marker folding method for vimscripts {{{
@@ -55,4 +53,5 @@ augroup END
 
 " Autoload configuration when this file changes ($MYVIMRC) {{{
 autocmd! BufWritePost vimrc source %
+" }}}
 " }}}
