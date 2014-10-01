@@ -78,5 +78,3 @@ endif
 set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menu,preview
 " }}}
-" ===[ Global autogroup ]=== {{{
-" }}}
