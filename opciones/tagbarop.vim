@@ -31,3 +31,5 @@ let g:tagbar_type_haskell = {
     \ }
 \ }
 "}}}
+
+let g:tagbar_width=26

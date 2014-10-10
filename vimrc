@@ -42,6 +42,7 @@ source $HOME/dotfiles/vim/opciones/sunsetop.vim "sunset details
 "}}}
 " ===[ Useful autocommands ]===  {{{
 au! BufNewFile,BufRead * if getline(1) =~ '"ft=vim' | setf vim | endif
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Vim marker folding method for vimscripts {{{
 augroup filetype_vim

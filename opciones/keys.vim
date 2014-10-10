@@ -31,6 +31,10 @@ nnoremap <Leader>= 1G=G
 "append semicolon at end of line
 "inoremap ; <esc>A;
 "nnoremap ; mqA;<esc>`q"
+
+"copy / paste from clipboard
+map <Leader>v "+gP
+map <Leader>c "+y
 "}}}
 
 " ===[ Plugins shortcuts ]=== {{{
@@ -99,3 +103,4 @@ inoremap <right> <nop>
 nnoremap  <leader>ne :cnext<cr>
 nnoremap  <leader>pe :cprevious<cr>
 "}}}
+"
