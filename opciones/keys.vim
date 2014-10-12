@@ -1,11 +1,13 @@
 "===[ map Leader ]=== {{{1
 let mapleader=","
 let g:mapleader=","
+
+inoremap jj <ESC>
 "1}}}
 
 "===[ MISC ]=== {{{
-"fast saving 
-nnoremap <Leader>w :w!<CR> 
+"fast saving
+nnoremap <Leader>w :w!<CR>
 
 "funcion para prender y apagar el spelling
 nmap <silent> <leader>s :set spell!<CR>
@@ -43,7 +45,7 @@ nnoremap <leader>os :CorrSpacing<CR>
 
 "taglist
 nnoremap <leader>lt :TlistToggle<CR>
-"tasklist 
+"tasklist
 nmap <Leader>td <Plug>TaskList
 
 "gundo
@@ -64,7 +66,7 @@ nnoremap <Leader>/ :nohls<CR>
 
 "Tagbar
 "abre la lista de tags
-nnoremap <Leader>ts :TagbarToggle<CR> 
+nnoremap <Leader>ts :TagbarToggle<CR>
 
 "Ghc-mod
 " Reload

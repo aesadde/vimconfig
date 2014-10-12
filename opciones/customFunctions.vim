@@ -6,7 +6,7 @@ function! FoldColumnToggle()
         setlocal foldcolumn = 4
     endif
 endfunction
-nnoremap <leader > tf :call FoldColumnToggle()<cr>
+nnoremap <leader>tf :call FoldColumnToggle()<cr>
 "1}}}
 "
 " ==[ Toggles quickfix list ]== {{{1
@@ -37,3 +37,12 @@ function! StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 " }}}
+
+"===[ Word count ]=== {{{
+function! WC()
+    let filename = expand("%")
+    let cmd = "texcount -brief " . filename . " | awk -F\+ '{print $1}'"
+    let result = system(cmd)
+    echo result
+endfunction
+"}}}
