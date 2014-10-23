@@ -78,3 +78,6 @@ endif
 set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menu,preview
 " }}}
+"
+" ==[ macVim testing ]=== {{{
+let g:macvim_skim_app_path='/Applications/Skim.app'
