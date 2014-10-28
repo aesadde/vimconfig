@@ -1,7 +1,7 @@
 syntax enable
 colorscheme solarized
 
-set background=light
+set background=dark
 
 let g:solarized_termcolors=16
 
