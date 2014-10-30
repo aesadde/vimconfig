@@ -27,7 +27,6 @@ source $HOME/dotfiles/vim/opciones/colors.vim "colorschemes
 source $HOME/dotfiles/vim/opciones/syntasticop.vim "syntastic options
 source $HOME/dotfiles/vim/opciones/nerdop.vim "powerline options
 source $HOME/dotfiles/vim/opciones/tasklistop.vim "task list options
-source $HOME/dotfiles/vim/opciones/vim-latexop.vim "vim latex options
 source $HOME/dotfiles/vim/opciones/bashop.vim "vim-bash options
 source $HOME/dotfiles/vim/opciones/goldenview.vim "goldenview options
 source $HOME/dotfiles/vim/opciones/customFunctions.vim "simple custom functions
@@ -39,6 +38,7 @@ source $HOME/dotfiles/vim/opciones/delimitMateop.vim "delimitMate options
 source $HOME/dotfiles/vim/opciones/superTabop.vim "superTab options
 source $HOME/dotfiles/vim/opciones/neocomplop.vim "neocomplcache options
 source $HOME/dotfiles/vim/opciones/sunsetop.vim "sunset details
+source $HOME/dotfiles/vim/opciones/sessions.vim "sessions
 "}}}
 " ===[ Useful autocommands ]===  {{{
 au! BufNewFile,BufRead * if getline(1) =~ '"ft=vim' | setf vim | endif
