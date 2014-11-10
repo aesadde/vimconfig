@@ -91,3 +91,12 @@
 [submodule "bundle/atp-vim"]
 	path = bundle/atp-vim
 	url = git://git.code.sf.net/p/atp-vim/code
+[submodule "bundle/latex-box"]
+	path = bundle/latex-box
+	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
+[submodule "bundle/vimshell"]
+	path = bundle/vimshell
+	url = https://github.com/Shougo/vimshell.vim.git
+[submodule "bundle/fastFold"]
+	path = bundle/fastFold
+	url = https://github.com/Konfekt/FastFold.git

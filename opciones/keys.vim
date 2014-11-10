@@ -1,6 +1,7 @@
 "===[ map Leader ]=== {{{1
 let mapleader=","
 let g:mapleader=","
+let g:localLeader=","
 
 inoremap jj <ESC>
 "1}}}

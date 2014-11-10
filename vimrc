@@ -39,6 +39,7 @@ source $HOME/dotfiles/vim/opciones/superTabop.vim "superTab options
 source $HOME/dotfiles/vim/opciones/neocomplop.vim "neocomplcache options
 source $HOME/dotfiles/vim/opciones/sunsetop.vim "sunset details
 source $HOME/dotfiles/vim/opciones/sessions.vim "sessions
+source $HOME/dotfiles/vim/opciones/latexop.vim "latex
 "}}}
 " ===[ Useful autocommands ]===  {{{
 au! BufNewFile,BufRead * if getline(1) =~ '"ft=vim' | setf vim | endif
