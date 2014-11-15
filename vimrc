@@ -14,8 +14,7 @@ else
     let g:pathogen_disabled = []
 endif
 
-call pathogen#infect()
-call pathogen#incubate()
+call pathogen#infect('bundle/{}')
 call pathogen#helptags()
 " }}}
 " ===[ All options ]=== {{{

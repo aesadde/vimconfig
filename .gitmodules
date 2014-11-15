@@ -100,3 +100,6 @@
 [submodule "bundle/fastFold"]
 	path = bundle/fastFold
 	url = https://github.com/Konfekt/FastFold.git
+[submodule "bundle/neocomplete"]
+	path = bundle/neocomplete
+	url = https://github.com/Shougo/neocomplete.vim.git
