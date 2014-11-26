@@ -1,7 +1,7 @@
 "enable backgrouhd latexmk
 let g:LatexBox_latexmk_async=1
 let g:LatexBox_latexmk_preview_continuously=1
-let g:LatexBox_quickfix=1
+let g:LatexBox_quickfix=0
 let g:LatexBox_output_type="pdf"
 
 "latexmk options to be able to run commands and get output on the file

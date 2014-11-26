@@ -1,9 +1,23 @@
 syntax enable
-colorscheme solarized
+
+"prevent macVim to apply its own colorscheme
+
+let color='baseCol'
 
 set background=dark
 
-let g:solarized_termcolors=16
+if color == 'baseCol'
+    "===[ base16 colours]=== {{{
+    let base16colorspace=256  " Access colors present in 256 colorspace
+    colorscheme base16-londontube
+    "}}}
+else
+    "===[ Solarized colours]=== {{{
+    let g:solarized_termcolors=256
+    colorscheme solarized
+"}}}
+endif
+
 
 if !has('gui_running')
     " Compatibility for Terminal
@@ -12,7 +26,8 @@ if !has('gui_running')
     if (&t_Co >= 256 || $TERM == 'xterm-256color')
         " Do nothing, it handles itself.
     else
-        " Make Solarized use 16 colors for Terminal support
-
+        let macvim_skip_colorscheme = 1
+        " Full screen means FULL screen
+        set fuoptions=maxvert,maxhorz
     endif
 endif

@@ -7,4 +7,7 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol = '⚡'
 let g:syntastic_style_warning_symbol = '⚡'
+let g:syntastic_stl_format = '[%E{%e Errors}%B{, }%W{%w Warnings}]'
+" cuda options
+let g:syntastic_cuda_check_header = 1
 

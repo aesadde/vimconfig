@@ -5,8 +5,7 @@ let g:localLeader=","
 
 inoremap jj <ESC>
 "1}}}
-
-"===[ MISC ]=== {{{
+"===[ MISC ]=== {{{1
 "fast saving
 nnoremap <Leader>w :w!<CR>
 
@@ -16,9 +15,7 @@ nmap <silent> <leader>s :set spell!<CR>
 "fast vimrc editing
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-"-----MISC--------
-"}}}
-
+"1}}}
 " === [ Text formatting ]=== {{{
 "toggle paste mode
 nnoremap <Leader>ps :set nopaste<CR>
@@ -39,7 +36,6 @@ nnoremap <Leader>= 1G=G
 map <Leader>v "+gP
 map <Leader>c "+y
 "}}}
-
 " ===[ Plugins shortcuts ]=== {{{
 "opspacing
 nnoremap <leader>os :CorrSpacing<CR>
@@ -75,8 +71,7 @@ map <silent> tu :call GHC_BrowseAll()<CR>
 " " Type Lookup
 map <silent> tw :call GHC_ShowType(1)<CR>"
 "}}}
-
-" ===[ Motion ]=== {{{
+" ===[ Motion ]=== {{{1
 "one screen line at a time (instead of vim line)
 nnoremap j gj
 nnoremap k gk
@@ -105,5 +100,13 @@ inoremap <right> <nop>
 " Move to next error after make
 nnoremap  <leader>ne :cnext<cr>
 nnoremap  <leader>pe :cprevious<cr>
-"}}}
-"
+
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Same when jumping around
+nnoremap g; g;zz
+nnoremap g, g,zz
+nnoremap <c-o> <c-o>zz
+"1}}}

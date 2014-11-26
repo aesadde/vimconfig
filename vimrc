@@ -1,8 +1,8 @@
-" ===[ Global Variables ]=== {{{
+" ===[ Global Variables ]=== {{{1
 let s:windows = has('win32') || has('win64')
 let s:mac_gui = has('gui_macvim')
-" }}}
-" ===[ Pathogen init ]=== {{{
+"1}}}
+" ===[ Pathogen init ]=== {{{1
 "pathogen is in a submodule so need this at the beginning of vimrc
 source ~/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
 filetype off
@@ -16,8 +16,8 @@ endif
 
 call pathogen#infect('bundle/{}')
 call pathogen#helptags()
-" }}}
-" ===[ All options ]=== {{{
+"1}}}
+" ===[ All options ]=== {{{1
 source $HOME/dotfiles/vim/opciones/globales.vim "global options
 source $HOME/dotfiles/vim/opciones/keys.vim "maps and keys
 source $HOME/dotfiles/vim/opciones/opjava.vim
@@ -39,20 +39,27 @@ source $HOME/dotfiles/vim/opciones/neocomplop.vim "neocomplcache options
 source $HOME/dotfiles/vim/opciones/sunsetop.vim "sunset details
 source $HOME/dotfiles/vim/opciones/sessions.vim "sessions
 source $HOME/dotfiles/vim/opciones/latexop.vim "latex
-"}}}
-" ===[ Useful autocommands ]===  {{{
+"1}}}
+" ===[ Useful autocommands ]===  {{{1
 au! BufNewFile,BufRead * if getline(1) =~ '"ft=vim' | setf vim | endif
+
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Vim marker folding method for vimscripts {{{
+" Vim marker folding method for vimscripts {{{2
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
     autocmd FileType sh setlocal foldmethod=marker
 augroup END
-" }}}
+" 2}}}
 
-" Autoload configuration when this file changes ($MYVIMRC) {{{
+" Autoload configuration when this file changes ($MYVIMRC) {{{2
 autocmd! BufWritePost vimrc source %
-" }}}
-" }}}
+" 2}}}
+" 1}}}
+"
+" ===[ Acknowledgments ]=== {{{1
+" Many things in these files are taken from elsewhere
+" bitbucket.org/sjl/dotfiles/src/cbbbc897e9b3/vim/vimrc
+" blog.sanctum.geek.nz/vim-command-typos/
+" 1}}}

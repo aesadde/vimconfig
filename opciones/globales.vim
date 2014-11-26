@@ -16,8 +16,8 @@ set mouse=a
 "1}}}
 "===[ Text Formatting options ]=== {{{1
 set encoding=utf-8             " unicode
-set ai                         " Auto indent                                                       "
-set si                         " smart indent                                                      "
+set ai                         " Auto indent
+set si                         " smart indent
 set splitright                 " Make vertical splits work sanely
 set splitbelow                 " Make horizontal splits work sanely
 set shiftwidth=2
@@ -41,10 +41,29 @@ set novisualbell                 " esto sirve para que VIM no suene xD
 set noerrorbells                 " esto para que no ladille cuando hay errores
 autocmd! GUIEnter * set vb t_vb=
 "1}}}"
-"===[ Others ]=== {{{1
+"===[ Line Return on reopening ]=== {{{1
+" Make sure Vim returns to the same line when you reopen a file.
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+" 1}}}
+"===[ Wildmenu ]=== {{{1
 set wildmenu
 set wildmode=list:longest
-set wildignore=*.o,*.~
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=**.~,.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.spl                            " compiled spelling word lists
+set wildignore+=*.sw?                            " Vim swap files
+set wildignore+=*.DS_Store                       " OSX bullshit
+"1}}}
+"===[ Others ]=== {{{1
+set ttyfast
 set directory=/tmp                    " directory to place swap files in
 set noswapfile                        " no quiero mas swaps
 set fileformats=mac,unix,dos          " support all three, in this order
@@ -78,6 +97,35 @@ endif
 set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menu,preview
 " }}}
-"
+" ===[ Annoyance Fixers ]==== {{{1
+set gdefault " global substitution by default
+nnoremap <F1> <nop> "used to togle help
+nnoremap Q <nop> "used to start ex mode
+nnoremap K <nop> "man pages wtf
+
+" correct vim commands typos
+if has("user_commands")
+    command! -bang -nargs=? -complete=file E e<bang> <args>
+    command! -bang -nargs=? -complete=file W w<bang> <args>
+    command! -bang -nargs=? -complete=file Wq wq<bang> <args>
+    command! -bang -nargs=? -complete=file WQ wq<bang> <args>
+    command! -bang Wa wa<bang>
+    command! -bang WA wa<bang>
+    command! -bang Q q<bang>
+    command! -bang QA qa<bang>
+    command! -bang Qa qa<bang>
+endif
+
+" ===[ Cursorline ]=== {{{2
+" Only show cursorline in the current window and in normal mode.
+augroup cline
+    au!
+    au WinLeave * set nocursorline
+    au WinEnter * set cursorline
+    au InsertEnter * set nocursorline
+    au InsertLeave * set cursorline
+augroup END
+"   2}}}
+"1}}}
 " ==[ macVim testing ]=== {{{
 let g:macvim_skim_app_path='/Applications/Skim.app'
