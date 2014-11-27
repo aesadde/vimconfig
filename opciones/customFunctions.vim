@@ -23,7 +23,7 @@ function! QuickfixToggle()
         let g:quickfix_is_open = 1
     endif
 endfunction
-nnoremap <leader > q :call QuickfixToggle()<cr>
+nnoremap <leader>q :call QuickfixToggle()<cr>
 "1}}}
 
 " ===[ Trailing whitespaces ]=== {{{
@@ -37,12 +37,3 @@ function! StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 " }}}
-
-"===[ Word count ]=== {{{
-function! WC()
-    let filename = expand("%")
-    let cmd = "texcount -brief " . filename . " | awk -F\+ '{print $1}'"
-    let result = system(cmd)
-    echo result
-endfunction
-"}}}

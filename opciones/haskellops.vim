@@ -8,3 +8,6 @@ augroup haskellgroup
     autocmd Filetype haskell set shiftround   "Round indent to nearest shiftwidth multiple
 augroup END
 " }}}
+
+" easy pointfree conversion of functions
+autocmd BufEnter *.hs set formatprg=pointfree

@@ -31,8 +31,9 @@ nnoremap <silent><Leader>y :Unite -silent history/yank<CR>
 
 " grep
 nnoremap <silent><Leader>g :Unite -silent -no-quit grep<CR>
+"
 " below command doesn't work
-nnoremap <silent><Leader>tl :Unite -silent -toggle grep:%::FIXME\|TODO\|NOTE<CR>
+" nnoremap <silent><Leader>tl :Unite -silent -toggle grep:%::FIXME\|TODO\|NOTE<CR>
 
 " files
 nnoremap <silent><Leader>o :Unite -silent -start-insert file<CR>

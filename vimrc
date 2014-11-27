@@ -36,7 +36,6 @@ source $HOME/dotfiles/vim/opciones/haskellops.vim "haskell mode options
 source $HOME/dotfiles/vim/opciones/delimitMateop.vim "delimitMate options
 source $HOME/dotfiles/vim/opciones/superTabop.vim "superTab options
 source $HOME/dotfiles/vim/opciones/neocomplop.vim "neocomplcache options
-source $HOME/dotfiles/vim/opciones/sunsetop.vim "sunset details
 source $HOME/dotfiles/vim/opciones/sessions.vim "sessions
 source $HOME/dotfiles/vim/opciones/latexop.vim "latex
 "1}}}
@@ -62,4 +61,5 @@ autocmd! BufWritePost vimrc source %
 " Many things in these files are taken from elsewhere
 " bitbucket.org/sjl/dotfiles/src/cbbbc897e9b3/vim/vimrc
 " blog.sanctum.geek.nz/vim-command-typos/
+" vimrcfu.com/snippet/76
 " 1}}}
