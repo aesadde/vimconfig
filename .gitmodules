@@ -7,9 +7,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/vim-latex"]
-	path = bundle/vim-latex
-	url = https://github.com/jcf/vim-latex.git
 [submodule "bundle/tasklist"]
 	path = bundle/tasklist
 	url = https://github.com/vim-scripts/TaskList.vim.git
@@ -28,27 +25,15 @@
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
-[submodule "bundle/vim-multiple-cursors"]
-	path = bundle/vim-multiple-cursors
-	url = https://github.com/terryma/vim-multiple-cursors.git
 [submodule "bundle/vim-bash"]
 	path = bundle/vim-bash
 	url = https://github.com/vim-scripts/bash-support.vim.git
-[submodule "bundle/vim-ctrlp"]
-	path = bundle/vim-ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/goldenView"]
 	path = bundle/goldenView
 	url = https://github.com/zhaocai/GoldenView.Vim.git
-[submodule "bundle/vim-ghcmod"]
-	path = bundle/vim-ghcmod
-	url = https://github.com/eagletmt/ghcmod-vim
-[submodule "bundle/latex"]
-	path = bundle/latex
-	url = https://github.com/gerw/vim-latex-suite.git
 [submodule "bundle/vim-easydir"]
 	path = bundle/vim-easydir
 	url = https://github.com/dockyard/vim-easydir.git
@@ -70,9 +55,6 @@
 [submodule "bundle/vim2hs"]
 	path = bundle/vim2hs
 	url = https://github.com/dag/vim2hs.git
-[submodule "bundle/neocomplcache"]
-	path = bundle/neocomplcache
-	url = https://github.com/Shougo/neocomplcache.vim.git
 [submodule "bundle/neco-ghc"]
 	path = bundle/neco-ghc
 	url = https://github.com/eagletmt/neco-ghc.git
@@ -88,9 +70,6 @@
 [submodule "bundle/vimbed"]
 	path = bundle/vimbed
 	url = http://github.com/ardagnir/vimbed
-[submodule "bundle/atp-vim"]
-	path = bundle/atp-vim
-	url = git://git.code.sf.net/p/atp-vim/code
 [submodule "bundle/latex-box"]
 	path = bundle/latex-box
 	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
