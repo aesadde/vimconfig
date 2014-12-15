@@ -17,17 +17,15 @@ let g:unite_source_directory_mru_time_format = '(%d-%m-%Y %H:%M:%S) '
 "unite tmp
 let g:junkfile#directory=expand($HOME."/.vim/tmp/junk")
 "1}}}
-
 " ==[ Search options ]== {{{1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
             \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
 "1}}}
-
 " ==[ Mappings ]== {{{1
 " yankring
-nnoremap <silent><Leader>y :Unite -silent history/yank<CR>
+nnoremap <Leader>y :Unite -no-split -start-insert -auto-resize -buffer-name=Yank_History history/yank<CR>
 
 " grep
 nnoremap <silent><Leader>g :Unite -silent -no-quit grep<CR>
@@ -43,7 +41,7 @@ nnoremap <silent><Leader>O :Unite -silent -start-insert file_rec/async<CR>
 nnoremap <silent><Leader>b :Unite -silent buffer<CR>
 
 "1}}}
-
+"===[ Play nice with superTab ]=== {{{
 autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
     let b:SuperTabDisabled=1
@@ -54,3 +52,4 @@ function! s:unite_settings()
 
     nmap <buffer> <ESC> <Plug>(unite_exit)
 endfunction
+"}}}

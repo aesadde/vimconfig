@@ -22,7 +22,7 @@ let g:airline#extensions#whitespace#enabled = 1
 
 "show line count of file
 call airline#parts#define_raw('linec', '%L')
-let g:airline_section_z = airline#section#create(['%3p%%', 'linenr', '/', 'linec', ':%3c '])
+let g:airline_section_z = airline#section#create(['%3p%%', 'linenr', '/', 'linec', ':%3c ', 'words: %{WordCount()}'])
 
 "===[ Latex wordcount ]=== {{{
 "autocmd! FileType tex let g:airline_section_y = '%{WC()}'

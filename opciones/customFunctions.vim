@@ -11,6 +11,7 @@ nnoremap <leader>tf :call FoldColumnToggle()<cr>
 "
 " ==[ Toggles quickfix list ]== {{{1
 let g:quickfix_is_open = 0
+let g:error_is_open = 0
 
 function! QuickfixToggle()
     if g:quickfix_is_open
@@ -26,6 +27,16 @@ endfunction
 nnoremap <leader>q :call QuickfixToggle()<cr>
 "1}}}
 
+function! ToggleErrors()
+    let old_last_winnr = winnr('$')
+    lclose
+    if old_last_winnr == winnr('$')
+        " Nothing was closed, open syntastic error location panel
+        Errors
+    endif
+endfunction
+nnoremap <leader>e :call ToggleErrors()<cr>
+
 " ===[ Trailing whitespaces ]=== {{{
 function! StripTrailingWhitespaces()
     " save last search & cursor position
@@ -37,3 +48,18 @@ function! StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 " }}}
+" ===[ Word count ]=== {{{
+function! WordCount()
+  let s:old_status = v:statusmsg
+  let position = getpos(".")
+  exe ":silent normal g\<c-g>"
+  let stat = v:statusmsg
+  let s:word_count = 0
+  if stat != '--No lines in buffer--'
+    let s:word_count = str2nr(split(v:statusmsg)[11])
+    let v:statusmsg = s:old_status
+  end
+  call setpos('.', position)
+  return s:word_count
+endfunction
+"}}}

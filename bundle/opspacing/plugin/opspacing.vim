@@ -19,12 +19,12 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 "Mappings {{{
-if !hasmapto('<Plug>OpspacingCorr')
-    map <unique> <leader>e <Plug>OpspacingCorr
-endif
+" if !hasmapto('<Plug>OpspacingCorr')
+"     map <unique> <leader>e <Plug>OpspacingCorr
+" endif
 
-noremap <unique> <script> <Plug>OpspacingCorr <SID>CorrectSpacing
-noremap <SID>CorrectSpacing :call <SID>CorrectSpacing()<CR>
+" noremap <unique> <script> <Plug>OpspacingCorr <SID>CorrectSpacing
+" noremap <SID>CorrectSpacing :call <SID>CorrectSpacing()<CR>
 
 "Register user command
 if !exists(":CorrSpacing")
@@ -33,7 +33,7 @@ endif
 "}}}
 
 " Function: OpSpacing() function is used to change the spacing of the given operator {{{1
-" Args: 
+" Args:
 " line_num: the line number that we are currently parsing
 " operator: the operator we are changing
 function s:OpSpacing(line_num, operator)
