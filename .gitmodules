@@ -88,3 +88,12 @@
 [submodule "bundle/utilsnips"]
 	path = bundle/utilsnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "bundle/vim-ghcmod"]
+	path = bundle/vim-ghcmod
+	url = https://github.com/eagletmt/ghcmod-vim.git
+[submodule "bundle/haskell-vim"]
+	path = bundle/haskell-vim
+	url = https://github.com/raichoo/haskell-vim.git
+[submodule "bundle/vim-hoogle"]
+	path = bundle/vim-hoogle
+	url = https://github.com/Twinside/vim-hoogle.git

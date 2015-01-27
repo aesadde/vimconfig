@@ -5,5 +5,4 @@ nmap <silent> <leader>s :set spell!<CR>
 "cambiar idioma spelling:
 ""set spelllang= *
 set spelllang=en_gb,it,es
-":set spellsuggest = 2 "opciones para corregir error
-
+set spell "activo por default

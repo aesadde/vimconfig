@@ -29,7 +29,7 @@ nnoremap <Leader>p p=`]
 nnoremap <Leader>= 1G=G
 
 "append semicolon at end of line
-"inoremap ; <esc>A;
+inoremap ; <esc>A;
 "nnoremap ; mqA;<esc>`q"
 
 "copy / paste from clipboard
@@ -40,8 +40,6 @@ map <Leader>c "+y
 "opspacing
 nnoremap <leader>os :CorrSpacing<CR>
 
-"taglist
-nnoremap <leader>lt :TlistToggle<CR>
 "tasklist
 nmap <Leader>td <Plug>TaskList
 
@@ -65,11 +63,7 @@ nnoremap <Leader>/ :nohls<CR>
 "abre la lista de tags
 nnoremap <Leader>ts :TagbarToggle<CR>
 
-"Ghc-mod
-" Reload
-map <silent> tu :call GHC_BrowseAll()<CR>
-" " Type Lookup
-map <silent> tw :call GHC_ShowType(1)<CR>"
+
 "}}}
 " ===[ Motion ]=== {{{1
 "one screen line at a time (instead of vim line)

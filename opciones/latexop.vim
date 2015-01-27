@@ -22,5 +22,4 @@ let g:LatexBox_no_mappings=1
 nnoremap <Leader>ll :Latexmk!<CR>
 nnoremap <Leader>lv :LatexView<CR>
 
-
-autocmd FileType latex setlocal spell
+autocmd FileType latex,tex setlocal spell

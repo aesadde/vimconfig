@@ -8,11 +8,7 @@ source ~/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
 filetype off
 
 "disable plugins that I don't want instead of removing them completely
-if s:mac_gui
-    let g:pathogen_disabled = []
-else
-    let g:pathogen_disabled = []
-endif
+    let g:pathogen_disabled = ['bundle/hdevtools']
 
 call pathogen#infect('bundle/{}')
 call pathogen#helptags()

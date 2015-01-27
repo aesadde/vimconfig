@@ -43,6 +43,7 @@ autocmd! GUIEnter * set vb t_vb=
 "1}}}"
 "===[ Line Return on reopening ]=== {{{1
 " Make sure Vim returns to the same line when you reopen a file.
+" Thanks, Amit
 augroup line_return
     au!
     au BufReadPost *
@@ -50,7 +51,7 @@ augroup line_return
         \     execute 'normal! g`"zvzz' |
         \ endif
 augroup END
-" 1}}}
+"1}}}
 "===[ Wildmenu ]=== {{{1
 set wildmenu
 set wildmode=list:longest
@@ -104,6 +105,7 @@ nnoremap Q <nop> "used to start ex mode
 nnoremap K <nop> "man pages wtf
 
 " correct vim commands typos
+" from: http://blog.sanctum.geek.nz/vim-command-typos/
 if has("user_commands")
     command! -bang -nargs=? -complete=file E e<bang> <args>
     command! -bang -nargs=? -complete=file W w<bang> <args>
@@ -129,3 +131,9 @@ augroup END
 "1}}}
 " ==[ macVim testing ]=== {{{
 let g:macvim_skim_app_path='/Applications/Skim.app'
+"}}}
+" ===[ Print options ]=== {{{
+set pdev=pdf
+set printoptions=paper:A4,syntax:y,wrap:y,duplex:long
+" }}}
+
