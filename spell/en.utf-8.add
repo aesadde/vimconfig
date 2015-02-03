@@ -27,3 +27,5 @@ SQL
 VHDL
 EDSLs
 DSL
+Int
+zipWith

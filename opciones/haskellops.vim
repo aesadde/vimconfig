@@ -6,7 +6,6 @@ augroup haskellgroup
     autocmd Filetype haskell set softtabstop=4 "Insert 4 spaces when tab is pressed
     autocmd Filetype haskell set shiftwidth=4 "An indent is 4 spaces
     autocmd Filetype haskell set shiftround   "Round indent to nearest shiftwidth multiple
-    autocmd BufEnter *.hs set formatprg=pointfree  "easy pointfree conversion of functions
     autocmd FileType haskell map <silent> <leader><cr> :noh<cr>:GhcModTypeClear<cr>:SyntasticReset<cr>
 augroup END
 " }}}
@@ -31,7 +30,6 @@ nnoremap <leader>hI :HoogleInfo
 nnoremap <silent> <leader>hz :HoogleClose<CR>
 
 " ===[ Variables for haskell plugins ]=== {{{
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['haskell'] }
 let g:necoghc_enable_detailed_browse = 1
 let g:haskell_enable_quantification = 1
 let g:haskell_enable_recursivedo = 1
