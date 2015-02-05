@@ -8,7 +8,6 @@ function! FoldColumnToggle()
 endfunction
 nnoremap <leader>tf :call FoldColumnToggle()<cr>
 "1}}}
-"
 " ==[ Toggles quickfix list ]== {{{1
 let g:quickfix_is_open = 0
 let g:error_is_open = 0
@@ -26,17 +25,6 @@ function! QuickfixToggle()
 endfunction
 nnoremap <leader>q :call QuickfixToggle()<cr>
 "1}}}
-
-" function! ToggleErrors()
-"     let old_last_winnr = winnr('$')
-"     lclose
-"     if old_last_winnr == winnr('$')
-"         " Nothing was closed, open syntastic error location panel
-"         Errors
-"     endif
-" endfunction
-" nnoremap <leader>e :call ToggleErrors()<cr>
-
 " ===[ Trailing whitespaces ]=== {{{
 function! StripTrailingWhitespaces()
     " save last search & cursor position

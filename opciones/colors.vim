@@ -1,11 +1,9 @@
+"===[ global color options ]=== {{{
 syntax enable
-
-"prevent macVim to apply its own colorscheme
-
-let color='baseCol'
-
 set background=dark
-
+let color='baseCol'
+"}}}
+" ===[ Apply colorschemes ]=== {{{
 if color == 'baseCol'
     "===[ base16 colours]=== {{{
     let base16colorspace=256  " Access colors present in 256 colorspace
@@ -17,7 +15,6 @@ else
     colorscheme solarized
 "}}}
 endif
-
 
 if !has('gui_running')
     " Compatibility for Terminal
@@ -31,3 +28,4 @@ if !has('gui_running')
         set fuoptions=maxvert,maxhorz
     endif
 endif
+"}}}

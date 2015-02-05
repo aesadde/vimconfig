@@ -10,6 +10,7 @@ iabbrev ccopy Copyright 2013 Alberto Sadde, all rights reserved.
 iabbrev adn and
 iabbrev waht what
 iabbrev tehn then
-iabbrev teh the 
+iabbrev teh the
+iabbrev unsued unused
 " }}}
 " }}}

@@ -20,17 +20,11 @@ let g:neocomplete_enable_camel_case_completion = 1
 
 "enable onmincompletion
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete_omni_patterns')
   let g:neocomplete_omni_patterns = {}
 endif
-let g:neocomplete_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplete_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplete_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
@@ -40,7 +34,7 @@ if !exists('g:neocomplete_same_filetype_lists')
     let g:neocomplete_same_filetype_lists = {}
 endif
 " In c buffers, completes from cpp and d buffers.
-let g:neocomplete_same_filetype_lists.c = 'cpp,d'
+let g:neocomplete_same_filetype_lists.c = 'cpp,d,cu'
 " In cpp buffers, completes from c buffers.
 let g:neocomplete_same_filetype_lists.cpp = 'c'
 " In gitconfig buffers, completes from all buffers.

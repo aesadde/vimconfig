@@ -34,9 +34,6 @@
 [submodule "bundle/goldenView"]
 	path = bundle/goldenView
 	url = https://github.com/zhaocai/GoldenView.Vim.git
-[submodule "bundle/vim-easydir"]
-	path = bundle/vim-easydir
-	url = https://github.com/dockyard/vim-easydir.git
 [submodule "bundle/unite"]
 	path = bundle/unite
 	url = https://github.com/Shougo/unite.vim.git
@@ -94,6 +91,9 @@
 [submodule "bundle/haskell-vim"]
 	path = bundle/haskell-vim
 	url = https://github.com/raichoo/haskell-vim.git
-[submodule "bundle/vim-hoogle"]
-	path = bundle/vim-hoogle
-	url = https://github.com/Twinside/vim-hoogle.git
+[submodule "bundle/haskell-hdevtools"]
+	path = bundle/haskell-hdevtools
+	url = https://github.com/bitc/vim-hdevtools.git
+[submodule "bundle/haskell-lushtags"]
+	path = bundle/haskell-lushtags
+	url = https://github.com/bitc/lushtags.git

@@ -9,9 +9,6 @@ inoremap jj <ESC>
 "fast saving
 nnoremap <Leader>w :w!<CR>
 
-"funcion para prender y apagar el spelling
-nmap <silent> <leader>s :set spell!<CR>
-
 "fast vimrc editing
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -40,17 +37,11 @@ map <Leader>c "+y
 "opspacing
 nnoremap <leader>os :CorrSpacing<CR>
 
-"tasklist
-nmap <Leader>td <Plug>TaskList
-
 "gundo
 nnoremap <Leader>u :GundoToggle<CR>
 
 "nerd tree
 nnoremap <Leader>n :NERDTreeToggle<CR>
-
-"Ack, like grep but better
-nnoremap <leader>a <Esc>:Ack!
 
 "syntastic manual check
 nnoremap <leader>ch :SyntasticCheck<CR>
@@ -62,8 +53,6 @@ nnoremap <Leader>/ :nohls<CR>
 "Tagbar
 "abre la lista de tags
 nnoremap <Leader>ts :TagbarToggle<CR>
-
-
 "}}}
 " ===[ Motion ]=== {{{1
 "one screen line at a time (instead of vim line)
