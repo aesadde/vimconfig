@@ -43,14 +43,16 @@ autocmd! GUIEnter * set vb t_vb=
 "1}}}"
 "===[ Line Return on reopening ]=== {{{1
 " Make sure Vim returns to the same line when you reopen a file.
-" Thanks, Amit
-augroup line_return
-    au!
-    au BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \     execute 'normal! g`"zvzz' |
-        \ endif
+" Return to last edit position when opening files (You want this!)
+augroup last_edit
+autocmd!
+autocmd BufReadPost *
+\ if line("'\"") > 0 && line("'\"") <= line("$") |
+\ exe "normal! g`\"" |
+\ endif
 augroup END
+" Remember info about open buffers on close
+set viminfo^=%
 "1}}}
 "===[ Wildmenu ]=== {{{1
 set wildmenu
@@ -136,4 +138,3 @@ let g:macvim_skim_app_path='/Applications/Skim.app'
 set pdev=pdf
 set printoptions=paper:A4,syntax:y,wrap:y,duplex:long
 " }}}
-

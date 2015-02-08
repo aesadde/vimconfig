@@ -33,3 +33,4 @@ let g:tagbar_type_haskell = {
 "}}}
 let g:tagbar_width=26
 let g:tagbar_autofocus=1
+set tags=tags;/,codex.tags;/
