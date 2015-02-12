@@ -4,5 +4,5 @@ nmap <silent> <leader>s :set spell!<CR>
 "Spelling dentro de VIM
 "cambiar idioma spelling:
 ""set spelllang= *
-set spelllang=en_gb,it,es
+set spelllang=en_gb ",it,es
 set spell "activo por default

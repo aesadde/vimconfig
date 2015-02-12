@@ -28,7 +28,6 @@ set ignorecase                 " estas dos opciones sirven para
 set smartcase                  " buscar mejor, ignora mayusculas y las revisa solo si especificado
 set history=1000               " aumenta el historial
 set backspace=indent,eol,start " Intuitive backspacing in insert mode
-syntax on
 filetype on
 filetype plugin on
 filetype indent on
@@ -83,7 +82,7 @@ set autoread                          " If a file is changed outside of vim, aut
 set foldmethod=indent
 set foldmethod=syntax
 set foldlevel=20
-set foldcolumn=4
+" set foldcolumn=4
 "1}}}
 "===[ Undo options ]=== {{{1
 " enable persistent undo
@@ -101,8 +100,7 @@ set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menu,preview
 " }}}
 " ===[ Annoyance Fixers ]==== {{{1
-set gdefault " global substitution by default
-nnoremap <F1> <nop> "used to togle help
+nnoremap <F1> <nop> "used to toggle help
 nnoremap Q <nop> "used to start ex mode
 nnoremap K <nop> "man pages wtf
 
