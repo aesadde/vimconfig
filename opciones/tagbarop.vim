@@ -1,36 +1,79 @@
-"Haskell support {{{
-let g:tagbar_type_haskell = {
-    \ 'ctagsbin'  : 'hasktags',
-    \ 'ctagsargs' : '-x -c -o-',
-    \ 'kinds'     : [
-        \  'm:modules:0:1',
-        \  'd:data: 0:1',
-        \  'd_gadt: data gadt:0:1',
-        \  't:type names:0:1',
-        \  'nt:new types:0:1',
-        \  'c:classes:0:1',
-        \  'cons:constructors:1:1',
-        \  'c_gadt:constructor gadt:1:1',
-        \  'c_a:constructor accessors:1:1',
-        \  'ft:function types:1:1',
-        \  'fi:function implementations:0:1',
-        \  'o:others:0:1'
-    \ ],
-    \ 'sro'        : '.',
-    \ 'kind2scope' : {
-        \ 'm' : 'module',
-        \ 'c' : 'class',
-        \ 'd' : 'data',
-        \ 't' : 'type'
-    \ },
-    \ 'scope2kind' : {
-        \ 'module' : 'm',
-        \ 'class'  : 'c',
-        \ 'data'   : 'd',
-        \ 'type'   : 't'
+"===[ Haskell tags ]=== {{{1
+let g:easytags_languages = {
+\   'haskell': {
+\       'cmd': '~/.cabal/bin/lushtags',
+\       'args': [],
+\       'fileoutput_opt': '-f',
+\       'stdout_opt': '-f-',
+\       'recurse_flag': '-R'
+\   }
+\}
+
+if executable('lushtags')
+    let g:tagbar_type_haskell = {
+        \ 'ctagsbin' : 'lushtags',
+        \ 'ctagsargs' : '--ignore-parse-error --',
+        \ 'kinds' : [
+            \ 'm:module:0',
+            \ 'e:exports:1',
+            \ 'i:imports:1',
+            \ 't:declarations:0',
+            \ 'd:declarations:1',
+            \ 'n:declarations:1',
+            \ 'f:functions:0',
+            \ 'c:constructors:0'
+        \ ],
+        \ 'sro' : '.',
+        \ 'kind2scope' : {
+            \ 'd' : 'data',
+            \ 'n' : 'newtype',
+            \ 'c' : 'constructor',
+            \ 't' : 'type'
+        \ },
+        \ 'scope2kind' : {
+            \ 'data' : 'd',
+            \ 'newtype' : 'n',
+            \ 'constructor' : 'c',
+            \ 'type' : 't'
+        \ }
     \ }
+endif
+"1}}}
+" ===[ Latex ctags options ]==== {{{1
+let g:tagbar_type_tex = {
+    \ 'ctagstype' : 'latex',
+    \ 'kinds'     : [
+        \ 's:sections',
+        \ 'g:graphics:0:0',
+        \ 'l:labels',
+        \ 'r:refs:1:0',
+        \ 'p:pagerefs:1:0'
+    \ ],
+    \ 'sort'    : 0,
+    \ }
+"1}}}
+" ===[ Snippets ]=== {{{1
+let g:tagbar_type_snippets = {
+    \ 'ctagstype' : 'snippets',
+    \ 'kinds' : [
+        \ 's:snippets',
+    \ ]
 \ }
-"}}}
+" 1}}}
+" ===[ Tagbar options ]=== {{{1
 let g:tagbar_width=26
 let g:tagbar_autofocus=1
-set tags=tags;/,codex.tags;/
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+let g:tagbar_autofocus=1
+let g:tagbar_autoclose=1
+"1}}}
+" ===[ Easytags options ]=== {{{1
+let g:easytags_dynamic_files = 2
+let g:easytags_auto_highlight = 0
+let g:easytags_auto_update = 0
+let g:easytags_resolve_links = 1
+set tags+=./tags
+set tags+=./.tags
+set tags+=./.git/tags
+
+"1}}}

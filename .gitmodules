@@ -100,3 +100,12 @@
 [submodule "bundle/daylight"]
 	path = bundle/daylight
 	url = https://github.com/dan-f/vim-daylight.git
+[submodule "bundle/haskell-hoogle"]
+	path = bundle/haskell-hoogle
+	url = https://github.com/Twinside/vim-hoogle.git
+[submodule "bundle/easytags"]
+	path = bundle/easytags
+	url = https://github.com/xolox/vim-easytags.git
+[submodule "bundle/vim-misc"]
+	path = bundle/vim-misc
+	url = https://github.com/xolox/vim-misc.git

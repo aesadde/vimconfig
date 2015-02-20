@@ -20,6 +20,7 @@ let g:LatexBox_Folding=1
 let g:LatexBox_no_mappings=1
 
 nnoremap <Leader>ll :Latexmk!<CR>
+nnoremap <Leader>lp :LatexmkStop<CR>
 nnoremap <Leader>lv :LatexView<CR>
 
 autocmd FileType latex,tex setlocal spell
