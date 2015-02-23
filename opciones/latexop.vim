@@ -16,6 +16,9 @@ let g:LatexBox_complete_inlineMath=1
 
 "enable folding
 let g:LatexBox_Folding=1
+let g:LatexBox_fold_text=1
+let g:LatexBox_fold_preamble=1
+
 
 " use custom mappings instead those provided by default
 let g:LatexBox_no_mappings=1
@@ -25,3 +28,8 @@ nnoremap <Leader>lp :LatexmkStop<CR>
 nnoremap <Leader>lv :LatexView<CR>
 
 autocmd FileType latex,tex setlocal spell
+
+map <silent> <Leader>ls :silent
+      \ !/Applications/Skim.app/Contents/SharedSupport/displayline
+      \ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>"
+      \ "%:p" <CR>
