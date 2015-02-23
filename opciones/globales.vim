@@ -61,6 +61,7 @@ set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
 set wildignore+=**.~,.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
 set wildignore+=*.spl                            " compiled spelling word lists
+set wildignore+=*.hi                            " haskell bin
 set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=*.DS_Store                       " OSX bullshit
 "1}}}
@@ -77,6 +78,7 @@ set nobackup                          " Don't want any backup magic
 set tags=./tags,./../tags,./*/tags
 set pdev=pdf
 set autoread                          " If a file is changed outside of vim, automatically reload it without asking
+
 "1}}}
 "===[ Folding ]=== {{{1
 set foldmethod=indent
@@ -135,4 +137,10 @@ let g:macvim_skim_app_path='/Applications/Skim.app'
 " ===[ Print options ]=== {{{
 set pdev=pdf
 set printoptions=paper:A4,syntax:y,wrap:y,duplex:long
+" }}}
+" ===[ formatting ]=== {{{
+" help fo-table
+set formatoptions-=r
+set formatoptions+=nj1
+au FocusLost * :wa " auto save when focus lost
 " }}}

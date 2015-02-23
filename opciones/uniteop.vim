@@ -24,14 +24,11 @@ call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
             \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
 "1}}}
 " ==[ Mappings ]== {{{1
-" yankring
-nnoremap <Leader>y :Unite -no-split -start-insert -auto-resize -buffer-name=Yank_History history/yank<CR>
-
 " grep
-nnoremap <silent><Leader>g :Unite -silent -no-quit grep<CR>
+nnoremap <silent><Leader>g :Unite -silent -no-quit grep:.:<CR>
 "
 " below command doesn't work
-" nnoremap <silent><Leader>tl :Unite -silent -toggle grep:%::FIXME\|TODO\|NOTE<CR>
+nnoremap <silent><Leader>td :Unite -silent -toggle grep:%:<CR>
 
 " files
 nnoremap <silent><Leader>o :Unite -silent -start-insert file<CR>

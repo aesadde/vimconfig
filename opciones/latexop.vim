@@ -3,6 +3,7 @@ let g:LatexBox_latexmk_async=1
 let g:LatexBox_latexmk_preview_continuously=1
 let g:LatexBox_quickfix=0
 let g:LatexBox_output_type="pdf"
+let g:LatexBox_folding=1
 
 "latexmk options to be able to run commands and get output on the file
 let g:LatexBox_latexmk_options="-shell-escape -enable-write18"

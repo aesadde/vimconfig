@@ -2,7 +2,6 @@
 let mapleader=","
 let g:mapleader=","
 let g:localLeader=","
-
 inoremap jj <ESC>
 "1}}}
 "===[ MISC ]=== {{{1
@@ -26,8 +25,8 @@ nnoremap <Leader>p p=`]
 nnoremap <Leader>= 1G=G
 
 "append semicolon at end of line
-inoremap ; <esc>A;
-"nnoremap ; mqA;<esc>`q"
+" inoremap ; <esc>A;
+" nnoremap ; mqA;<esc>`q"
 
 "copy / paste from clipboard
 map <Leader>v "+gP
@@ -58,14 +57,8 @@ nnoremap <Leader>ts :TagbarToggle<CR>
 "one screen line at a time (instead of vim line)
 nnoremap j gj
 nnoremap k gk
-"renoremap CTRL-F/B" to move page up or down
 nnoremap J <c-F>
 nnoremap K <c-B>
-
-"cambio de buffer mas rapido
-nnoremap <Leader>b :bn<CR>
-"remove buffer
-nnoremap <Leader>db :bd<CR>
 
 "windows navigation
 nnoremap <c-j> <c-w>j
@@ -92,4 +85,10 @@ nnoremap N Nzzzv
 nnoremap g; g;zz
 nnoremap g, g,zz
 nnoremap <c-o> <c-o>zz
+
+" show matching brackets
+" from steve losh coming home to vim
+nnoremap <tab> %
+vnoremap <tab> %
+
 "1}}}
