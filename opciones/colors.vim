@@ -1,6 +1,6 @@
 "===[ global color options ]=== {{{
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
 "}}}

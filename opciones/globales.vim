@@ -135,7 +135,7 @@ augroup END
 let g:macvim_skim_app_path='/Applications/Skim.app'
 "}}}
 " ===[ Print options ]=== {{{
-set pdev=pdf
+" set pdev=pdf
 set printoptions=paper:A4,syntax:y,wrap:y,duplex:long
 " }}}
 " ===[ formatting ]=== {{{
