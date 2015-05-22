@@ -50,6 +50,7 @@ autocmd BufReadPost *
 \ exe "normal! g`\"" |
 \ endif
 augroup END
+
 " Remember info about open buffers on close
 set viminfo^=%
 "1}}}
@@ -84,7 +85,6 @@ set autoread                          " If a file is changed outside of vim, aut
 set foldmethod=indent
 set foldmethod=syntax
 set foldlevel=20
-" set foldcolumn=4
 "1}}}
 "===[ Undo options ]=== {{{1
 " enable persistent undo
@@ -120,27 +120,16 @@ if has("user_commands")
     command! -bang Qa qa<bang>
 endif
 
-" ===[ Cursorline ]=== {{{2
-" Only show cursorline in the current window and in normal mode.
+" show cursorline in the current window
 augroup cline
     au!
     au WinLeave * set nocursorline
     au WinEnter * set cursorline
-    au InsertEnter * set nocursorline
+    au InsertEnter * set cursorline
     au InsertLeave * set cursorline
 augroup END
-"   2}}}
 "1}}}
-" ==[ macVim testing ]=== {{{
-let g:macvim_skim_app_path='/Applications/Skim.app'
-"}}}
 " ===[ Print options ]=== {{{
 " set pdev=pdf
 set printoptions=paper:A4,syntax:y,wrap:y,duplex:long
-" }}}
-" ===[ formatting ]=== {{{
-" help fo-table
-set formatoptions-=r
-set formatoptions+=nj1
-au FocusLost * :wa " auto save when focus lost
 " }}}

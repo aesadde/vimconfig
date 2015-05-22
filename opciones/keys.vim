@@ -23,14 +23,6 @@ vnoremap <C-c> "*y<CR>
 nnoremap <Leader>p p=`]
 "indenta de manera correcta todo el archivo
 nnoremap <Leader>= 1G=G
-
-"append semicolon at end of line
-" inoremap ; <esc>A;
-" nnoremap ; mqA;<esc>`q"
-
-"copy / paste from clipboard
-map <Leader>v "+gP
-map <Leader>c "+y
 "}}}
 " ===[ Plugins shortcuts ]=== {{{
 "opspacing
@@ -85,10 +77,4 @@ nnoremap N Nzzzv
 nnoremap g; g;zz
 nnoremap g, g,zz
 nnoremap <c-o> <c-o>zz
-
-" show matching brackets
-" from steve losh coming home to vim
-nnoremap <tab> %
-vnoremap <tab> %
-
 "1}}}

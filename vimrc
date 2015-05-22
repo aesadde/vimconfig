@@ -6,31 +6,27 @@ let s:mac_gui = has('gui_macvim')
 "pathogen is in a submodule so need this at the beginning of vimrc
 source ~/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
 filetype off
-
 "disable plugins that I don't want instead of removing them completely
-    let g:pathogen_disabled = []
-
+" let g:pathogen_disabled = []
 call pathogen#infect('bundle/{}')
 call pathogen#helptags()
 "1}}}
+
+"1}}}
 " ===[ All options ]=== {{{1
+source $HOME/dotfiles/vim/opciones/plugins.vim
 source $HOME/dotfiles/vim/opciones/globales.vim "global options
 source $HOME/dotfiles/vim/opciones/keys.vim "maps and keys
-source $HOME/dotfiles/vim/opciones/opspell.vim
-source $HOME/dotfiles/vim/opciones/colors.vim "colorschemes
-source $HOME/dotfiles/vim/opciones/syntasticop.vim "syntastic options
-source $HOME/dotfiles/vim/opciones/nerdop.vim "powerline options
-source $HOME/dotfiles/vim/opciones/goldenview.vim "goldenview options
 source $HOME/dotfiles/vim/opciones/customFunctions.vim "simple custom functions
-source $HOME/dotfiles/vim/opciones/uniteop.vim "unite plugin options
 source $HOME/dotfiles/vim/opciones/tagbarop.vim "tagbar plugin options
-source $HOME/dotfiles/vim/opciones/airlinesop.vim "airline plugin options
-source $HOME/dotfiles/vim/opciones/haskellops.vim "haskell mode options
-source $HOME/dotfiles/vim/opciones/delimitMateop.vim "delimitMate options
-source $HOME/dotfiles/vim/opciones/superTabop.vim "superTab options
-source $HOME/dotfiles/vim/opciones/neocomplop.vim "neocomplcache options
-source $HOME/dotfiles/vim/opciones/latexop.vim "latex
 "1}}}
+"===[ color options ]=== {{{1
+syntax enable
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors=256
+"1}}}
+
 " ===[ Useful autocommands ]===  {{{1
 au! BufNewFile,BufRead * if getline(1) =~ '"ft=vim' | setf vim | endif
 
