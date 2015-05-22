@@ -69,7 +69,6 @@ let g:SuperTabLongestHighlight = 1
 inoremap <Nul> <C-X><C-O>
 inoremap <C-Space> <C-X><C-O>
 
-
 " Latex Box
 let g:LatexBox_latexmk_async=1 "enable background latexmk
 let g:LatexBox_latexmk_preview_continuously=1
