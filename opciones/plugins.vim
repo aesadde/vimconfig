@@ -15,6 +15,8 @@ let g:syntastic_warning_symbol='⚠'
 let g:syntastic_stl_format = '[%E{%e Errors}%B{, }%W{%w Warnings}]'
 let g:syntastic_cuda_check_header = 1 " cuda options
 let g:syntastic_haskell_checkers=["hdevtools"] " haskell options
+let g:syntastic_mode_map={'mode': 'active', 'passive_filetypes': ['haskell']}
+let g:syntastic_always_populate_loc_list = 1
 
 "nerdtree
 let NERDTreeDirArrows=1
@@ -42,6 +44,17 @@ nmap <silent> <leader>hT :GhcModTypeInsert<CR> " Insert type of expression under
 nmap <silent> <leader>hc :SyntasticCheck ghc_mod<CR>" GHC errors and warnings
 nmap <silent> <leader>hl :SyntasticCheck hlint<CR> " Haskell Lint
 let g:ghcmod_hlint_options = ['--ignore=Redundant $']
+
+autocmd BufWritePost *.hs,*.lhs GhcModCheckAndLintAsync " Auto-checking on writing
+"  neocomplcache (advanced completion)
+autocmd BufEnter *.hs,*.lhs let g:neocomplcache_enable_at_startup = 1
+function! SetToCabalBuild()
+    if glob("*.cabal") != ''
+        set makeprg=cabal\ build
+    endif
+endfunction
+autocmd BufEnter *.hs,*.lhs :call SetToCabalBuild()
+let $PATH=$PATH.':'.expand("~/.cabal/bin") " neco-ghc
 
 "delimitMate
 let delimitMate_matchpairs = "(:),[:],{:}"
@@ -84,7 +97,7 @@ map <silent> <Leader>ls :silent
       \ "%:p" <CR>
 
 " neocomplete
-let g:acp_enableAtStartup = 1 " Disable AutoComplPop.
+let g:acp_enableAtStartup = 0 " Disable AutoComplPop.
 let g:neocomplete_enable_at_startup = 1 " Use neocomplete
 let g:neocomplete_enable_smart_case = 1 " Use smartcase.
 let g:neocomplete_enable_underbar_completion = 1 "Use under _ bar completion
