@@ -19,12 +19,20 @@ Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
 
 Plug 'altercation/vim-colors-solarized' " solarized vim
+Plug 'NLKNguyen/papercolor-theme' " Google inspired colorscheme
 Plug 'bling/vim-airline' " status line
 Plug 'tpope/vim-commentary' " add comments easily
 Plug 'tpope/vim-surround' " surround things
 Plug 'zhaocai/GoldenView.Vim' " better splits
 
+"Latex Plugin
 Plug 'vim-scripts/LaTeX-Box' "best latex plugin ever
+
+"iOS plugins
+Plug 'eraserhd/vim-ios' " ios options for vim
+Plug 'vim-scripts/cocoa.vim' " cocoa plugin
+Plug 'Rip-Rip/clang_complete'
+
 call plug#end()
 
 " ===[ All options ]=== {{{1
@@ -38,7 +46,7 @@ source $HOME/dotfiles/vim/opciones/customFunctions.vim "simple custom functions
 syntax enable
 set background=light
 colorscheme solarized
-" let g:solarized_termcolors=256
+let g:solarized_termcolors=16
 "1}}}
 " ===[ Useful autocommands ]===  {{{1
 au! BufNewFile,BufRead * if getline(1) =~ '"ft=vim' | setf vim | endif
