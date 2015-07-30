@@ -32,6 +32,9 @@ Plug 'vim-scripts/LaTeX-Box' "best latex plugin ever
 Plug 'eraserhd/vim-ios' " ios options for vim
 Plug 'vim-scripts/cocoa.vim' " cocoa plugin
 Plug 'Rip-Rip/clang_complete'
+Plug 'toyamarinyon/vim-swift' " swift support
+
+Plug 'pbrisbin/vim-syntax-shakespeare'  "yesod syntax highlight
 
 call plug#end()
 
@@ -49,17 +52,15 @@ colorscheme solarized
 let g:solarized_termcolors=16
 "1}}}
 " ===[ Useful autocommands ]===  {{{1
+" Vim marker folding method for vimscripts {{{2
 au! BufNewFile,BufRead * if getline(1) =~ '"ft=vim' | setf vim | endif
 autocmd BufWritePre * :%s/\s\+$//e
-
-" Vim marker folding method for vimscripts {{{2
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
     autocmd FileType sh setlocal foldmethod=marker
 augroup END
 " 2}}}
-
 " Autoload configuration when this file changes ($MYVIMRC) {{{2
 autocmd! BufWritePost vimrc source %
 " 2}}}
