@@ -13,32 +13,44 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'scrooloose/syntastic'             " syntax checker
 
 "Haskell Plugins
-Plug 'eagletmt/ghcmod-vim'
-Plug 'eagletmt/neco-ghc'
-Plug 'pbrisbin/vim-syntax-shakespeare'  "yesod syntax highlight
+Plug 'eagletmt/ghcmod-vim',             { 'for': 'haskell' }
+Plug 'eagletmt/neco-ghc',               { 'for': 'haskell' }
+Plug 'Twinside/vim-hoogle',             { 'for': 'haskell' }
+Plug 'bosu/hscope',                     { 'for': 'haskell' }
+Plug 'pbrisbin/vim-syntax-shakespeare', { 'for': 'haskell' }  "yesod syntax highlight
+Plug 'bitc/vim-hdevtools',              { 'for': 'haskell' }
+Plug 'kana/vim-filetype-haskell',       { 'for': 'Haskell' } "better indentation
+
 
 "Colorschemes
 Plug 'altercation/vim-colors-solarized' " solarized vim
 Plug 'gilgigilgil/anderson.vim' " Wes Anderson colorschemes
 Plug 'kien/rainbow_parentheses.vim' "Multi-color parantheses
+Plug 'NLKNguyen/papercolor-theme' " Google inspired colorscheme
 
 "Other
-Plug 'NLKNguyen/papercolor-theme' " Google inspired colorscheme
 Plug 'bling/vim-airline' " status line
 Plug 'tpope/vim-commentary' " add comments easily
 Plug 'tpope/vim-surround' " surround things
 Plug 'zhaocai/GoldenView.Vim' " better splits
 Plug 'majutsushi/tagbar' "Tagbar
-Plug 'derekwyatt/vim-scala' "Scala syntax highlighting
+Plug 'jiangmiao/auto-pairs' "auto close pars and brackets
+Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
+Plug 'rizzatti/dash.vim' "Dash API search integration
+
+
+"Scala
+Plug 'derekwyatt/vim-scala', {'for': 'scala'} "Scala syntax highlighting
 
 "Latex Plugin
-Plug 'vim-scripts/LaTeX-Box' "best latex plugin ever
+Plug 'vim-scripts/LaTeX-Box', { 'for': 'latex,tex' }"best latex plugin ever
 
 "iOS plugins
-Plug 'eraserhd/vim-ios' " ios options for vim
-Plug 'vim-scripts/cocoa.vim' " cocoa plugin
-Plug 'Rip-Rip/clang_complete'
-Plug 'toyamarinyon/vim-swift' " swift support
+Plug 'eraserhd/vim-ios',       { 'for': 'cocoa,swift'}" ios options for vim
+Plug 'vim-scripts/cocoa.vim',  { 'for': 'cocoa,swift'} " cocoa plugin
+Plug 'Rip-Rip/clang_complete', { 'for': 'cocoa,swift'}
+Plug 'toyamarinyon/vim-swift', { 'for': 'cocoa,swift'} " swift support
+Plug 'tpope/vim-fugitive' "git from vim
 
 " Plug 'unblevable/quick-scope' "highlights chars for f motions
 call plug#end()
@@ -52,10 +64,19 @@ source $HOME/dotfiles/vim/opciones/customFunctions.vim "simple custom functions
 " source $HOME/dotfiles/vim/opciones/quick-scope.vim
 "1}}}
 "===[ color options ]=== {{{1
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
+
+set gfn=Monaco:h12 " Use large font by default in MacVim
+
 syntax enable
 set background=light
-colorscheme solarized
-let g:solarized_termcolors=16
+" colorscheme base16-atelierdune
+colorscheme PaperColor
 "1}}}
 " ===[ Useful autocommands ]===  {{{1
 " Vim marker folding method for vimscripts {{{2
@@ -68,8 +89,24 @@ augroup filetype_vim
 augroup END
 " 2}}}
 " Autoload configuration when this file changes ($MYVIMRC) {{{2
-autocmd! BufWritePost vimrc source %
+" Source the vimrc file after saving it
+augroup sourcing
+  autocmd!
+  autocmd bufwritepost .vimrc source $MYVIMRC
+augroup END
 " 2}}}
+" Delete trailing white space on save {{{2
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+
+augroup whitespace
+  autocmd!
+  autocmd BufWrite *.hs :call DeleteTrailingWS()
+augroup END
+"2}}}
 " 1}}}
 " ===[ Acknowledgments ]=== {{{1
 " Many things in these files are taken from elsewhere

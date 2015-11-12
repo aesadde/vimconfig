@@ -44,12 +44,14 @@ autocmd! GUIEnter * set vb t_vb=
 " Make sure Vim returns to the same line when you reopen a file.
 " Return to last edit position when opening files (You want this!)
 augroup last_edit
-autocmd!
-autocmd BufReadPost *
-\ if line("'\"") > 0 && line("'\"") <= line("$") |
-\ exe "normal! g`\"" |
-\ endif
+  autocmd!
+  autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \ exe "normal! g`\"" |
+        \ endif
 augroup END
+" Remember info about open buffers on close
+set viminfo^=%
 
 " Remember info about open buffers on close
 set viminfo^=%
@@ -64,7 +66,7 @@ set wildignore+=**.~,.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
 set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.hi                            " haskell bin
 set wildignore+=*.sw?                            " Vim swap files
-set wildignore+=*.DS_Store                       " OSX bullshit
+set wildignore+=*.DS_Store                       " OSX stuff
 "1}}}
 "===[ Others ]=== {{{1
 set ttyfast
@@ -80,6 +82,8 @@ set tags=./tags,./../tags,./*/tags
 set pdev=pdf
 set autoread                          " If a file is changed outside of vim, automatically reload it without asking
 
+let $PATH = $PATH . ':' . expand("~/.local/bin") "faster tags
+
 "1}}}
 "===[ Folding ]=== {{{1
 set foldmethod=indent
@@ -89,12 +93,12 @@ set foldlevel=20
 "===[ Undo options ]=== {{{1
 " enable persistent undo
 if has('persistent_undo')
-    set undofile
-    set undodir=~/.vim/tmp/undo
-    if !isdirectory(&undodir)
-        call mkdir(&undodir, 'p')
-    endif
-    set undoreload=10000
+  set undofile
+  set undodir=~/.vim/tmp/undo
+  if !isdirectory(&undodir)
+    call mkdir(&undodir, 'p')
+  endif
+  set undoreload=10000
 endif
 "1}}}
 " ===[ Omni completion options ]=== {{{
@@ -109,25 +113,36 @@ nnoremap K <nop> "man pages wtf
 " correct vim commands typos
 " from: http://blog.sanctum.geek.nz/vim-command-typos/
 if has("user_commands")
-    command! -bang -nargs=? -complete=file E e<bang> <args>
-    command! -bang -nargs=? -complete=file W w<bang> <args>
-    command! -bang -nargs=? -complete=file Wq wq<bang> <args>
-    command! -bang -nargs=? -complete=file WQ wq<bang> <args>
-    command! -bang Wa wa<bang>
-    command! -bang WA wa<bang>
-    command! -bang Q q<bang>
-    command! -bang QA qa<bang>
-    command! -bang Qa qa<bang>
+  command! -bang -nargs=? -complete=file E e<bang> <args>
+  command! -bang -nargs=? -complete=file W w<bang> <args>
+  command! -bang -nargs=? -complete=file Wq wq<bang> <args>
+  command! -bang -nargs=? -complete=file WQ wq<bang> <args>
+  command! -bang Wa wa<bang>
+  command! -bang WA wa<bang>
+  command! -bang Q q<bang>
+  command! -bang QA qa<bang>
+  command! -bang Qa qa<bang>
 endif
 
 " show cursorline in the current window
 augroup cline
-    au!
-    au WinLeave * set nocursorline
-    au WinEnter * set cursorline
-    au InsertEnter * set cursorline
-    au InsertLeave * set cursorline
+  au!
+  au WinLeave * set nocursorline
+  au WinEnter * set cursorline
+  au InsertEnter * set cursorline
+  au InsertLeave * set cursorline
 augroup END
+
+"Fix path issues from vim.wikia.com/wiki/Set_working_directory_to_the_current_file
+let s:default_path = escape(&path, '\ ') " store default value of 'path'
+" Always add the current file's directory to the path and tags list if not
+" " already there. Add it to the beginning to speed up searches.
+autocmd BufRead *
+      \ let s:tempPath=escape(escape(expand("%:p:h"), ' '), '\ ') |
+      \ exec "set path-=".s:tempPath |
+      \ exec "set path-=".s:default_path |
+      \ exec "set path^=".s:tempPath |
+      \ exec "set path^=".s:default_path")))"
 "1}}}
 " ===[ Print options ]=== {{{
 " set pdev=pdf

@@ -25,9 +25,6 @@ nnoremap <Leader>p p=`]
 nnoremap <Leader>= 1G=G
 "}}}
 " ===[ Plugins shortcuts ]=== {{{
-"opspacing
-nnoremap <leader>os :CorrSpacing<CR>
-
 "gundo
 nnoremap <Leader>u :GundoToggle<CR>
 
@@ -77,4 +74,7 @@ nnoremap N Nzzzv
 nnoremap g; g;zz
 nnoremap g, g,zz
 nnoremap <c-o> <c-o>zz
+
+"tab completion
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 "1}}}
