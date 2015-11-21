@@ -57,7 +57,6 @@ augroup haskell
  au FileType haskell let g:necoghc_enable_detailed_browse = 1 " Show types in completion suggestions"
  au FileType haskell let g:ghcmod_use_basedir = getcwd()
 
-
  " tags set up
  au FileType haskell set tags=tags;/,codex.tags;/
  function! LoadHscope()
@@ -76,37 +75,7 @@ au FileType haskell set csverb
 au FileType haskell set completeopt+=longest
 au BufEnter /*.hs call LoadHscope()
 
-let g:tagbar_type_haskell = {
-    \ 'ctagsbin'  : 'hasktags',
-    \ 'ctagsargs' : '-x -c -o-',
-    \ 'kinds'     : [
-        \  'm:modules:0:1',
-        \  'd:data: 0:1',
-        \  'd_gadt: data gadt:0:1',
-        \  't:type names:0:1',
-        \  'nt:new types:0:1',
-        \  'c:classes:0:1',
-        \  'cons:constructors:1:1',
-        \  'c_gadt:constructor gadt:1:1',
-        \  'c_a:constructor accessors:1:1',
-        \  'ft:function types:1:1',
-        \  'fi:function implementations:0:1',
-        \  'o:others:0:1'
-    \ ],
-    \ 'sro'        : '.',
-    \ 'kind2scope' : {
-        \ 'm' : 'module',
-        \ 'c' : 'class',
-        \ 'd' : 'data',
-        \ 't' : 'type'
-    \ },
-    \ 'scope2kind' : {
-        \ 'module' : 'm',
-        \ 'class'  : 'c',
-        \ 'data'   : 'd',
-        \ 'type'   : 't'
-    \ }
-\ }
+
 
 function! SetToCabalBuild()
     if glob("*.cabal") != ''
@@ -180,6 +149,10 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+autocmd Filetype scala setlocal omnifunc=javacomplete#Complete
+autocmd Filetype scala setlocal completefunc=javacomplete#CompleteParamsInfo
 
 "2}}}
 " ===[Rainbow Parentheses ]=== {{{2
@@ -219,7 +192,74 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 "2}}}
 "===[ TagBar]=== {{{2
+let g:tagbar_width=26
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+let g:tagbar_autofocus=1
+let g:tagbar_autoclose=1
 
+"haskel tags
+if executable("hasktags")
+  let g:tagbar_type_haskell = {
+        \ 'ctagsbin'  : 'hasktags',
+        \ 'ctagsargs' : '-x -c -o-',
+        \ 'kinds'     : [
+        \  'm:modules:0:1',
+        \ 'e:exports:1',
+        \ 'i:imports:1',
+        \ 't:declarations:0',
+        \ 'd:declarations:1',
+        \ 'n:declarations:1',
+        \ 'f:functions:0',
+        \ 'c:constructors:0',
+        \  'd:data: 0:1',
+        \  'd_gadt: data gadt:0:1',
+        \  't:type names:0:1',
+        \  'nt:new types:0:1',
+        \  'c:classes:0:1',
+        \  'cons:constructors:1:1',
+        \  'c_gadt:constructor gadt:1:1',
+        \  'c_a:constructor accessors:1:1',
+        \  'ft:function types:1:1',
+        \  'fi:function implementations:0:1',
+        \  'o:others:0:1'
+        \ ],
+        \ 'sro'        : '.',
+        \ 'kind2scope' : {
+        \ 'm' : 'module',
+        \ 'c' : 'class',
+        \ 'd' : 'data',
+        \ 'n' : 'newtype',
+        \ 't' : 'type'
+        \ },
+        \ 'scope2kind' : {
+        \ 'module' : 'm',
+        \ 'class'  : 'c',
+        \ 'n' : 'newtype',
+        \ 'data'   : 'd',
+        \ 'type'   : 't'
+        \ }
+        \ }
+endif
 
+"Latex tags
+let g:tagbar_type_tex = {
+    \ 'ctagstype' : 'latex',
+    \ 'kinds'     : [
+        \ 's:sections',
+        \ 'g:graphics:0:0',
+        \ 'l:labels',
+        \ 'r:refs:1:0',
+        \ 'p:pagerefs:1:0'
+    \ ],
+    \ 'sort'    : 0,
+    \ }
+"2}}}
+"===[ UtilSnips ]=== {{{2
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 "2}}}
 "1}}}

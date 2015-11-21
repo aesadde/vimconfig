@@ -11,6 +11,10 @@ Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'scrooloose/syntastic'             " syntax checker
+Plug 'Yggdroot/indentLine' "show indent lines (matching brackets)
+Plug 'SirVer/ultisnips' " Track the engine.
+Plug 'honza/vim-snippets' "Snippets
+
 
 "Haskell Plugins
 Plug 'eagletmt/ghcmod-vim',             { 'for': 'haskell' }
@@ -35,12 +39,15 @@ Plug 'tpope/vim-surround' " surround things
 Plug 'zhaocai/GoldenView.Vim' " better splits
 Plug 'majutsushi/tagbar' "Tagbar
 Plug 'jiangmiao/auto-pairs' "auto close pars and brackets
-Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
 Plug 'rizzatti/dash.vim' "Dash API search integration
 
+"Pandoc
+Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
 
 "Scala
 Plug 'derekwyatt/vim-scala', {'for': 'scala'} "Scala syntax highlighting
+Plug 'vim-scripts/javacomplete', {'for': 'scala'}
+
 
 "Latex Plugin
 Plug 'vim-scripts/LaTeX-Box', { 'for': 'latex,tex' }"best latex plugin ever
@@ -52,7 +59,6 @@ Plug 'Rip-Rip/clang_complete', { 'for': 'cocoa,swift'}
 Plug 'toyamarinyon/vim-swift', { 'for': 'cocoa,swift'} " swift support
 Plug 'tpope/vim-fugitive' "git from vim
 
-" Plug 'unblevable/quick-scope' "highlights chars for f motions
 call plug#end()
 "1}}}
 " ===[ All options ]=== {{{1
@@ -60,8 +66,6 @@ source $HOME/dotfiles/vim/opciones/plugins.vim
 source $HOME/dotfiles/vim/opciones/globales.vim "global options
 source $HOME/dotfiles/vim/opciones/keys.vim "maps and keys
 source $HOME/dotfiles/vim/opciones/customFunctions.vim "simple custom functions
-" source $HOME/dotfiles/vim/opciones/tagbarop.vim "tagbar plugin options
-" source $HOME/dotfiles/vim/opciones/quick-scope.vim
 "1}}}
 "===[ color options ]=== {{{1
 if &term =~ '256color'
@@ -75,7 +79,6 @@ set gfn=Monaco:h12 " Use large font by default in MacVim
 
 syntax enable
 set background=light
-" colorscheme base16-atelierdune
 colorscheme PaperColor
 "1}}}
 " ===[ Useful autocommands ]===  {{{1
@@ -107,6 +110,9 @@ augroup whitespace
   autocmd BufWrite *.hs :call DeleteTrailingWS()
 augroup END
 "2}}}
+" Custom filetypes {{{2
+au BufRead *.fun set filetype=haskell "Fun Language (Oxford)
+" 2}}}
 " 1}}}
 " ===[ Acknowledgments ]=== {{{1
 " Many things in these files are taken from elsewhere
