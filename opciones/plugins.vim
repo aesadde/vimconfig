@@ -117,6 +117,8 @@ map <silent> <Leader>ls :silent
 " ===[  neocomplete ]=== {{{2
 let g:acp#enableAtStartup = 0 " Disable AutoComplPop.
 let g:neocomplete#enable_at_startup = 1 " Use neocomplete
+let g:neocomplete#force_overwrite_completefunc = 1
+let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
 let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#enable_smart_case = 1 " Use smartcase.
 let g:neocomplete#enable_underbar_completion = 1 "Use under _ bar completion
@@ -124,25 +126,26 @@ let g:neocomplete#min_syntax_length = 3 " Set minimum syntax keyword length.
 let g:neocomplete#enable_fuzzy_completion = 1 " Use fuzzy completion
 let g:neocomplete#max_list = 5 " Size of list
 let g:neocomplete#enable_camel_case_completion = 1 " Use camel case completion.
-
+let g:neocomplete#enable_auto_select = 1 " AutoComplPop like behavior.
 
 " Enable heavy omni completion.
-if !exists('g:neocompelte#omni_patterns')
-  let g:neocompelte#omni_patterns = {}
+if !exists('g:neocomplete#omni_patterns')
+  let g:neocomplete#omni_patterns = {}
 endif
-let g:neocompelte#omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocompelte#omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#omni_patterns.java = '\k\.\k*'
 
 " Uses lists from similar files
-if !exists('g:neocompelte#same_filetype_lists')
-    let g:neocompelte#same_filetype_lists = {}
+if !exists('g:neocomplete#same_filetype_lists')
+    let g:neocomplete#same_filetype_lists = {}
 endif
 
-let g:neocompelte#same_filetype_lists.c = 'cpp,d,cu' " In c buffers, completes from cpp and d buffers.
-let g:neocompelte#same_filetype_lists.cpp = 'c' " In cpp buffers, completes from c buffers.
-let g:neocompelte#same_filetype_lists.gitconfig = '_' " In gitconfig buffers, completes from all buffers.
-let g:neocompelte#same_filetype_lists._ = '_' " In default, completes from all buffers.
-let g:neocompelte#same_filetype_lists.scala = 'java' "Complete Scala from Java
+let g:neocomplete#same_filetype_lists.c = 'cpp,d,cu' " In c buffers, completes from cpp and d buffers.
+let g:neocomplete#same_filetype_lists.cpp = 'c' " In cpp buffers, completes from c buffers.
+let g:neocomplete#same_filetype_lists.gitconfig = '_' " In gitconfig buffers, completes from all buffers.
+let g:neocomplete#same_filetype_lists.scala = 'java' "Complete Scala from Java
+let g:neocomplete#same_filetype_lists._ = '_' " In default, completes from all buffers.
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -150,9 +153,6 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
-autocmd Filetype scala setlocal omnifunc=javacomplete#Complete
-autocmd Filetype scala setlocal completefunc=javacomplete#CompleteParamsInfo
 
 "2}}}
 " ===[Rainbow Parentheses ]=== {{{2
@@ -197,7 +197,7 @@ let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
 
-"haskel tags
+"haskell tags
 if executable("hasktags")
   let g:tagbar_type_haskell = {
         \ 'ctagsbin'  : 'hasktags',
@@ -254,12 +254,24 @@ let g:tagbar_type_tex = {
     \ 'sort'    : 0,
     \ }
 "2}}}
-"===[ UtilSnips ]=== {{{2
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+"===[ Unite ]=== {{{2
+call unite#filters#sorter_default#use(['sorter_rank'])
+let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+let g:unite_prompt = "➤ "
+let g:unite_enable_ignore_case = 1
+let g:unite_source_history_yank_enable = 1
+let g:unite_data_directory='~/.vim/.cache/unite'
+let g:unite_source_rec_max_cache_files=10000
+let g:unite_enable_start_insert = 1
+let g:unite_split_rule = "botright"
+let g:unite_force_overwrite_statusline = 0
+let g:unite_winheight = 10
+
+call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+      \ 'ignore_pattern', join([
+      \ '\.git/',
+      \ ], '\|'))
 "2}}}
 "1}}}

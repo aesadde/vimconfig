@@ -40,17 +40,17 @@ Plug 'zhaocai/GoldenView.Vim' " better splits
 Plug 'majutsushi/tagbar' "Tagbar
 Plug 'jiangmiao/auto-pairs' "auto close pars and brackets
 Plug 'rizzatti/dash.vim' "Dash API search integration
+Plug 'jordwalke/VimCompleteLikeAModernEditor'
 
 "Pandoc
 Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
 
 "Scala
 Plug 'derekwyatt/vim-scala', {'for': 'scala'} "Scala syntax highlighting
-Plug 'vim-scripts/javacomplete', {'for': 'scala'}
-
+Plug 'artur-shaik/vim-javacomplete2', {'for': 'scala,java'}
 
 "Latex Plugin
-Plug 'vim-scripts/LaTeX-Box', { 'for': 'latex,tex' }"best latex plugin ever
+Plug 'vim-scripts/LaTeX-Box', { 'for': 'latex,tex' } "best latex plugin ever
 
 "iOS plugins
 Plug 'eraserhd/vim-ios',       { 'for': 'cocoa,swift'}" ios options for vim

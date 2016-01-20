@@ -41,6 +41,15 @@ nnoremap <Leader>/ :nohls<CR>
 "Tagbar
 "abre la lista de tags
 nnoremap <Leader>ts :TagbarToggle<CR>
+
+"Unite
+" search a file in the filetree
+nnoremap <C-P> :<C-u>Unite  -buffer-name=files   -start-insert buffer file_rec/async:!<cr>
+" reset not it is <C-l> normally
+:nnoremap <leader>ur <Plug>(unite_restart)
+
+nnoremap // :Unite grep:.<cr>
+nnoremap <leader>b :Unite buffer<cr>
 "}}}
 " ===[ Motion ]=== {{{1
 "one screen line at a time (instead of vim line)
@@ -75,6 +84,20 @@ nnoremap g; g;zz
 nnoremap g, g,zz
 nnoremap <c-o> <c-o>zz
 
-"tab completion
+"neo complete tab completion
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 "1}}}

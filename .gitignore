@@ -6,3 +6,4 @@ haskellmode.config
 .sessions
 *tags*
 plugged/*
+.cache
