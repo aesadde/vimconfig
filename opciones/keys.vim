@@ -50,6 +50,14 @@ nnoremap <C-P> :<C-u>Unite  -buffer-name=files   -start-insert buffer file_rec/a
 
 nnoremap // :Unite grep:.<cr>
 nnoremap <leader>b :Unite buffer<cr>
+
+function! UltiSnipsCallUnite()
+  Unite -start-insert -winheight=100 -immediately -no-empty ultisnips
+  return ''
+endfunction
+
+inoremap <silent> <F12> <C-R>=(pumvisible()? "\<LT>C-E>":"")<CR><C-R>=UltiSnipsCallUnite()<CR>
+nnoremap <silent> <F12> a<C-R>=(pumvisible()? "\<LT>C-E>":"")<CR><C-R>=UltiSnipsCallUnite()<CR>
 "}}}
 " ===[ Motion ]=== {{{1
 "one screen line at a time (instead of vim line)
@@ -74,15 +82,6 @@ inoremap <right> <nop>
 " Move to next error after make
 nnoremap  <leader>ne :cnext<cr>
 nnoremap  <leader>pe :cprevious<cr>
-
-" Keep search matches in the middle of the window.
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
-" Same when jumping around
-nnoremap g; g;zz
-nnoremap g, g,zz
-nnoremap <c-o> <c-o>zz
 
 "neo complete tab completion
 " <CR>: close popup and save indent.
