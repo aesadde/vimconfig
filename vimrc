@@ -111,7 +111,8 @@ augroup whitespace
 augroup END
 "2}}}
 " Custom filetypes {{{2
-au BufRead *.fun set filetype=haskell "Fun Language (Oxford)
+au BufRead,BufNewfile *.fun set filetype=haskell "Fun Language (Oxford)
+au BufRead,BufNewFile *.md setfiletype markdown.tex
 " 2}}}
 " 1}}}
 " ===[ Acknowledgments ]=== {{{1

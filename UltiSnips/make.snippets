@@ -1,0 +1,27 @@
+snippet make_hw
+## Markdown extension (e.g. md, markdown, mdown).
+MEXT = md
+
+## All markdown files in the working directory
+SRC = $(wildcard *.$(MEXT)) $(wildcard */*.$(MEXT))
+OUT= ${1: homework}
+
+## Location of Pandoc support files.
+PREFIX = /Users/alberto/Projects/latex-templates
+
+## Location of your working bibliography file
+BIB = refs.bib
+
+TEX=$(SRC:.md=.tex)
+
+all:	$(TEX)
+
+tex:	clean $(TEX)
+
+%.tex: %.md
+	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S --latex-engine=pdflatex --template=$(PREFIX)/homework.latex $(OUT).md -o $(OUT).tex
+	latexmk -f $(OUT)
+
+clean:
+	rm -f *.aux *.bbl *.blg *.aux *.bbl *.blg *.fdb* *.fls *.pdf *.tex *.dvi *.log *.out
+endsnippet
