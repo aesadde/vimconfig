@@ -6,7 +6,6 @@ let s:mac_gui = has('gui_macvim')
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-easy-align'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'}
 Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neocomplete.vim'
@@ -50,7 +49,7 @@ Plug 'derekwyatt/vim-scala', {'for': 'scala'} "Scala syntax highlighting
 Plug 'artur-shaik/vim-javacomplete2', {'for': 'scala,java'}
 
 "Latex Plugin
-Plug 'vim-scripts/LaTeX-Box', { 'for': 'latex,tex' } "best latex plugin ever
+Plug 'vim-scripts/LaTeX-Box', { 'for': 'tex' } "best latex plugin ever
 
 "iOS plugins
 Plug 'eraserhd/vim-ios',       { 'for': 'cocoa,swift'}" ios options for vim
@@ -112,7 +111,14 @@ augroup END
 "2}}}
 " Custom filetypes {{{2
 au BufRead,BufNewfile *.fun set filetype=haskell "Fun Language (Oxford)
-au BufRead,BufNewFile *.md setfiletype markdown.tex
+augroup markdown
+  autocmd!
+  au BufRead,BufNewFile *.md setfiletype markdown
+  au BufRead,BufNewFile *.md UltiSnipsAddFiletypes markdown.tex
+  setlocal spell
+  set conceallevel=0
+  augroup END
+
 " 2}}}
 " 1}}}
 " ===[ Acknowledgments ]=== {{{1
