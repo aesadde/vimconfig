@@ -19,9 +19,9 @@ all:	$(TEX)
 tex:	clean $(TEX)
 
 %.tex: %.md
-	pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S --latex-engine=pdflatex --template=$(PREFIX)/homework.latex $(OUT).md -o $(OUT).tex
-	latexmk -f $(OUT)
+	    pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S --latex-engine=pdflatex --template=$(PREFIX)/homework.latex $(OUT).md -o $(OUT).tex
+	    latexmk -f $(OUT)
 
 clean:
-	rm -f *.aux *.bbl *.blg *.aux *.bbl *.blg *.fdb* *.fls *.pdf *.tex *.dvi *.log *.out
+	    rm -f *.aux *.bbl *.blg *.aux *.bbl *.blg *.fdb* *.fls *.pdf *.tex *.dvi *.log *.out
 endsnippet

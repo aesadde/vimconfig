@@ -19,13 +19,6 @@ let g:syntastic_haskell_checkers=["hdevtools"] " haskell options
 let g:syntastic_mode_map={"mode": "active", "active_filetypes": ["haskell"]}
 let g:syntastic_always_populate_loc_list = 0
 "2}}}
-" ===[ nerdtree ]=== {{{2
-let NERDTreeDirArrows=1
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.o$','\.svn$', '\~$', '.DS_Store']
-let NERDTreeMinimalUI=1
-let NERDTreeChDirMode = 2
-"2}}}
 " ===[ airline ]=== {{{2
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -53,8 +46,9 @@ augroup haskell
  au FileType haskell set shiftwidth=4                "An indent is 4 spaces
  au FileType haskell set shiftround                  "Round indent to nearest shiftwidth multiple
  au FileType haskell set omnifunc=necoghc#omnifunc "enable onmincompletion
- au FileType haskell let g:haskellmode_completion_ghc = 0
+ au FileType haskell let g:haskellmode_completion_ghc = 1
  au FileType haskell let g:necoghc_enable_detailed_browse = 1 " Show types in completion suggestions"
+autocmd FileType haskell setlocal formatoptions+=t
  au FileType haskell let g:ghcmod_use_basedir = getcwd()
 
  " tags set up
@@ -74,8 +68,6 @@ au FileType haskell set cst
 au FileType haskell set csverb
 au FileType haskell set completeopt+=longest
 au BufEnter /*.hs call LoadHscope()
-
-
 
 function! SetToCabalBuild()
     if glob("*.cabal") != ''
@@ -256,9 +248,9 @@ let g:tagbar_type_tex = {
 "2}}}
 "===[ Unite ]=== {{{2
 call unite#filters#sorter_default#use(['sorter_rank'])
-let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
+let g:unite_source_rec_async_command=['ag --nocolor --nogroup -g ""']
 let g:unite_prompt = "➤ "
 let g:unite_enable_ignore_case = 1
 let g:unite_source_history_yank_enable = 1
@@ -268,6 +260,14 @@ let g:unite_enable_start_insert = 1
 let g:unite_split_rule = "botright"
 let g:unite_force_overwrite_statusline = 0
 let g:unite_winheight = 10
+
+" Like ctrlp.vim settings.
+call unite#custom#profile('default', 'context', {
+\   'start_insert': 1,
+\   'winheight': 10,
+\   'direction': 'botright',
+\ })
+
 
 call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
       \ 'ignore_pattern', join([

@@ -28,9 +28,6 @@ nnoremap <Leader>= 1G=G
 "gundo
 nnoremap <Leader>u :GundoToggle<CR>
 
-"nerd tree
-nnoremap <Leader>n :NERDTreeToggle<CR>
-
 "syntastic manual check
 nnoremap <leader>ch :SyntasticCheck<CR>
 nnoremap <Leader>stm :SyntasticToggleMode<CR>
@@ -46,7 +43,8 @@ nnoremap <Leader>ts :TagbarToggle<CR>
 " search a file in the filetree
 nnoremap <C-P> :<C-u>Unite  -buffer-name=files   -start-insert buffer file_rec/async:!<cr>
 " reset not it is <C-l> normally
-:nnoremap <leader>ur <Plug>(unite_restart)
+nnoremap <leader>ur <Plug>(unite_restart)
+nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
 
 nnoremap // :Unite grep:.<cr>
 nnoremap <leader>b :Unite buffer<cr>
@@ -82,6 +80,15 @@ inoremap <right> <nop>
 " Move to next error after make
 nnoremap  <leader>ne :cnext<cr>
 nnoremap  <leader>pe :cprevious<cr>
+
+"Vimux and ghci
+nnoremap <leader>gh :call VimuxRunCommand("ghci " . bufname("%"))<CR>
+
+function! VimuxSlime()
+    call VimuxSendText(@v)
+    call VimuxSendKeys("Enter")
+endfunction
+vmap <LocalLeader>vs "vy :call VimuxSlime()<CR>
 
 "neo complete tab completion
 " <CR>: close popup and save indent.

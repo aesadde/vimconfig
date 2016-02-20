@@ -15,15 +15,17 @@ set display+=lastline
 set mouse=a
 "1}}}
 "===[ Text Formatting options ]=== {{{1
+set nospell
 set encoding=utf-8             " unicode
 set ai                         " Auto indent
 set si                         " smart indent
 set splitright                 " Make vertical splits work sanely
 set splitbelow                 " Make horizontal splits work sanely
-set shiftwidth=2
+set shiftwidth=4
+set shiftround
 set expandtab
-set tabstop=2
-set softtabstop=2
+set tabstop=8
+set softtabstop=4
 set ignorecase                 " estas dos opciones sirven para
 set smartcase                  " buscar mejor, ignora mayusculas y las revisa solo si especificado
 set history=1000               " aumenta el historial
@@ -130,17 +132,6 @@ augroup cline
   au InsertEnter * set cursorline
   au InsertLeave * set cursorline
 augroup END
-
-"Fix path issues from vim.wikia.com/wiki/Set_working_directory_to_the_current_file
-" let s:default_path = escape(&path, '\ ') " store default value of 'path'
-" " Always add the current file's directory to the path and tags list if not
-" " " already there. Add it to the beginning to speed up searches.
-" autocmd BufRead *
-"       \ let s:tempPath=escape(escape(expand("%:p:h"), ' '), '\ ') |
-"       \ exec "set path-=".s:tempPath |
-"       \ exec "set path-=".s:default_path |
-"       \ exec "set path^=".s:tempPath |
-"       \ exec "set path^=".s:default_path")))"
 "1}}}
 " ===[ Print options ]=== {{{
 " set pdev=pdf

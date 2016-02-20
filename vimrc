@@ -14,22 +14,17 @@ Plug 'Yggdroot/indentLine' "show indent lines (matching brackets)
 Plug 'SirVer/ultisnips' " Track the engine.
 Plug 'honza/vim-snippets' "Snippets
 
-
 "Haskell Plugins
 Plug 'eagletmt/ghcmod-vim',             { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc',               { 'for': 'haskell' }
 Plug 'Twinside/vim-hoogle',             { 'for': 'haskell' }
 Plug 'bosu/hscope',                     { 'for': 'haskell' }
-Plug 'pbrisbin/vim-syntax-shakespeare', { 'for': 'haskell' }  "yesod syntax highlight
 Plug 'bitc/vim-hdevtools',              { 'for': 'haskell' }
-Plug 'kana/vim-filetype-haskell',       { 'for': 'Haskell' } "better indentation
 
 
 "Colorschemes
 Plug 'altercation/vim-colors-solarized' " solarized vim
-Plug 'gilgigilgil/anderson.vim' " Wes Anderson colorschemes
 Plug 'kien/rainbow_parentheses.vim' "Multi-color parantheses
-Plug 'NLKNguyen/papercolor-theme' " Google inspired colorscheme
 
 "Other
 Plug 'bling/vim-airline' " status line
@@ -38,8 +33,8 @@ Plug 'tpope/vim-surround' " surround things
 Plug 'zhaocai/GoldenView.Vim' " better splits
 Plug 'majutsushi/tagbar' "Tagbar
 Plug 'jiangmiao/auto-pairs' "auto close pars and brackets
-Plug 'rizzatti/dash.vim' "Dash API search integration
 Plug 'jordwalke/VimCompleteLikeAModernEditor'
+Plug 'benmills/vimux'
 
 "Pandoc
 Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
@@ -74,11 +69,11 @@ if &term =~ '256color'
   set t_ut=
 endif
 
-set gfn=Monaco:h12 " Use large font by default in MacVim
+set gfn=Monaco:h11 " Use large font by default in MacVim
 
 syntax enable
-set background=light
-colorscheme PaperColor
+set background=dark
+colorscheme smyck
 "1}}}
 " ===[ Useful autocommands ]===  {{{1
 " Vim marker folding method for vimscripts {{{2
@@ -97,28 +92,15 @@ augroup sourcing
   autocmd bufwritepost .vimrc source $MYVIMRC
 augroup END
 " 2}}}
-" Delete trailing white space on save {{{2
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-
-augroup whitespace
-  autocmd!
-  autocmd BufWrite *.hs :call DeleteTrailingWS()
-augroup END
-"2}}}
 " Custom filetypes {{{2
 au BufRead,BufNewfile *.fun set filetype=haskell "Fun Language (Oxford)
 augroup markdown
   autocmd!
   au BufRead,BufNewFile *.md setfiletype markdown
   au BufRead,BufNewFile *.md UltiSnipsAddFiletypes markdown.tex
-  setlocal spell
+  au FileType markdown setlocal spell
   set conceallevel=0
   augroup END
-
 " 2}}}
 " 1}}}
 " ===[ Acknowledgments ]=== {{{1
