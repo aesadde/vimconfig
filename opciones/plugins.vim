@@ -81,6 +81,18 @@ augroup END
 " ===[ delimitMate ]=== {{{2
 let delimitMate_matchpairs = "(:),[:],{:}"
 let delimitMate_excluded_regions = "Comment,String"
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
+let delimitMate_apostrophes = ''
+let delimitMate_autoclose = 1
+let delimitMate_balance_matchpairs = 0
+let delimitMate_eol_marker = ''
+let delimitMate_excluded_ft = ''
+let delimitMate_jump_expansion = 1
+let delimitMate_nesting_quotes = []
+let delimitMate_quotes = '" '' `'
+let delimitMate_smart_matchpairs = '^\%(\w\|\!\|£\|\$\|_\|["'']\s*\S\)'
+let delimitMate_smart_quotes = 1
 "2}}}
 " ===[  Latex Box ]=== {{{2
 let g:LatexBox_latexmk_async=1 "enable background latexmk
@@ -116,7 +128,7 @@ let g:neocomplete#enable_smart_case = 1 " Use smartcase.
 let g:neocomplete#enable_underbar_completion = 1 "Use under _ bar completion
 let g:neocomplete#min_syntax_length = 3 " Set minimum syntax keyword length.
 let g:neocomplete#enable_fuzzy_completion = 1 " Use fuzzy completion
-let g:neocomplete#max_list = 5 " Size of list
+let g:neocomplete#max_list = 3 " Size of list
 let g:neocomplete#enable_camel_case_completion = 1 " Use camel case completion.
 let g:neocomplete#enable_auto_select = 1 " AutoComplPop like behavior.
 

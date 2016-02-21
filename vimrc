@@ -32,8 +32,8 @@ Plug 'tpope/vim-commentary' " add comments easily
 Plug 'tpope/vim-surround' " surround things
 Plug 'zhaocai/GoldenView.Vim' " better splits
 Plug 'majutsushi/tagbar' "Tagbar
-Plug 'jiangmiao/auto-pairs' "auto close pars and brackets
 Plug 'jordwalke/VimCompleteLikeAModernEditor'
+Plug 'Raimondi/delimitMate' "auto close pairs
 Plug 'benmills/vimux'
 
 "Pandoc
